@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link active">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Support Hero -->
+    <section class="support-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1>We're Here to Help</h1>
+                <p>Get expert assistance for all your farming needs - 24/7 support available</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-phone-alt"></i>
+                        <h3>Instant Help</h3>
+                        <p>Call our helpline for immediate assistance</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>Expert Consultation</h3>
+                        <p>Schedule one-on-one with agriculture experts</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Field Visits</h3>
+                        <p>Get on-site guidance for complex issues</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Grid -->
+    <section class="support-container">
+        <div class="container">
+            <!-- Emergency Support -->
+            <div class="support-category">
+                <h2 class="category-title">Emergency Support</h2>
+                <p class="category-subtitle">Immediate assistance for urgent farming issues</p>
+                
+                <div class="support-grid">
+                    <div class="support-card emergency">
+                        <div class="support-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>24/7 Helpline</h3>
+                        <p>Call for immediate assistance with crop emergencies, pest outbreaks, or weather alerts</p>
+                        <div class="contact-info">
+                            <p><strong>National Helpline:</strong> 1800-180-1551</p>
+                            <p><strong>WhatsApp Support:</strong> +91-9876543210</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='tel:18001801551'">
+                            <i class="fas fa-phone"></i> Call Now
+                        </button>
+                    </div>
+                    
+                    <div class="support-card emergency">
+                        <div class="support-icon">
+                            <i class="fas fa-sms"></i>
+                        </div>
+                        <h3>SMS Alert Service</h3>
+                        <p>Receive emergency alerts about weather, pests, and market changes via SMS</p>
+                        <div class="contact-info">
+                            <p><strong>Register:</strong> Send "KISAN" to 56161</p>
+                            <p><strong>Language:</strong> Available in all regional languages</p>
+                        </div>
+                        <button class="btn btn-primary" id="registerSMSBtn">
+                            <i class="fas fa-mobile-alt"></i> Register Now
+                        </button>
+                    </div>
+                    
+                    <div class="support-card emergency">
+                        <div class="support-icon">
+                            <i class="fas fa-ambulance"></i>
+                        </div>
+                        <h3>Emergency Field Visit</h3>
+                        <p>Request immediate field visit for critical crop issues requiring on-site inspection</p>
+                        <div class="contact-info">
+                            <p><strong>Response Time:</strong> Within 24 hours</p>
+                            <p><strong>Coverage:</strong> All major farming districts</p>
+                        </div>
+                        <button class="btn btn-primary" id="requestFieldVisitBtn">
+                            <i class="fas fa-car"></i> Request Visit
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Expert Consultation -->
+            <div class="support-category">
+                <h2 class="category-title">Expert Consultation</h2>
+                <p class="category-subtitle">Connect with agricultural experts for personalized guidance</p>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>Video Consultation</h3>
+                        <p>One-on-one video call with agri-experts. Share live field images and get advice</p>
+                        <div class="availability">
+                            <p><i class="far fa-clock"></i> Mon-Sat: 9 AM - 7 PM</p>
+                            <p><i class="fas fa-rupee-sign"></i> Free for registered farmers</p>
+                        </div>
+                        <button class="btn btn-primary" id="bookVideoConsultationBtn">
+                            <i class="fas fa-calendar-check"></i> Book Session
+                        </button>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Group Workshop</h3>
+                        <p>Join free workshops on trending farming topics with Q&A sessions</p>
+                        <div class="availability">
+                            <p><i class="fas fa-calendar-alt"></i> Every Saturday: 10 AM</p>
+                            <p><i class="fas fa-language"></i> Multiple languages</p>
+                        </div>
+                        <button class="btn btn-primary" id="joinWorkshopBtn">
+                            <i class="fas fa-chalkboard-teacher"></i> View Schedule
+                        </button>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Specialist Consultation</h3>
+                        <p>Connect with specialists for specific crops, soil science, or organic farming</p>
+                        <div class="availability">
+                            <p><i class="fas fa-crop"></i> 50+ Specialists</p>
+                            <p><i class="fas fa-star"></i> Certified Experts</p>
+                        </div>
+                        <button class="btn btn-primary" id="findSpecialistBtn">
+                            <i class="fas fa-search"></i> Find Specialist
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Government Services -->
+            <div class="support-category">
+                <h2 class="category-title">Government Services</h2>
+                <p class="category-subtitle">Access government agricultural services and schemes</p>
+                
+                <div class="support-grid">
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Krishi Bhavan Locator</h3>
+                        <p>Find your nearest agriculture office for in-person support and scheme applications</p>
+                        <div class="service-info">
+                            <p><i class="fas fa-tractor"></i> Soil Testing</p>
+                            <p><i class="fas fa-seedling"></i> Seed Distribution</p>
+                            <p><i class="fas fa-file-contract"></i> Scheme Assistance</p>
+                        </div>
+                        <button class="btn btn-primary" id="findKrishiBhavanBtn">
+                            <i class="fas fa-map"></i> Find Nearest Office
+                        </button>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Scheme Application Help</h3>
+                        <p>Get assistance with government scheme applications, documentation, and follow-up</p>
+                        <div class="service-info">
+                            <p><i class="fas fa-check-circle"></i> Form Filling</p>
+                            <p><i class="fas fa-paperclip"></i> Document Help</p>
+                            <p><i class="fas fa-sync-alt"></i> Status Tracking</p>
+                        </div>
+                        <button class="btn btn-primary" id="schemeHelpBtn">
+                            <i class="fas fa-handshake"></i> Get Help
+                        </button>
+                    </div>
+                    
+                    <div class="support-card">
+                        <div class="support-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Legal & Insurance Support</h3>
+                        <p>Help with crop insurance claims, land disputes, and agricultural legal matters</p>
+                        <div class="service-info">
+                            <p><i class="fas fa-shield-alt"></i> Insurance Claims</p>
+                            <p><i class="fas fa-gavel"></i> Legal Advice</p>
+                            <p><i class="fas fa-handshake"></i> Dispute Resolution</p>
+                        </div>
+                        <button class="btn btn-primary" id="legalSupportBtn">
+                            <i class="fas fa-balance-scale"></i> Get Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <div class="form-container animate__animated animate__fadeInUp">
+                    <h2>Send Us Your Query</h2>
+                    <p>We'll respond within 24 hours</p>
+                    
+                    <form id="supportContactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name *</label>
+                                <input type="text" id="contactName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number *</label>
+                                <input type="tel" id="contactPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="contactEmail">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>State *</label>
+                            <select id="contactState" required>
+                                <option value="">Select State</option>
+                                <option value="kerala">Kerala</option>
+                                <option value="tamilnadu">Tamil Nadu</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="punjab">Punjab</option>
+                                <option value="uttarpradesh">Uttar Pradesh</option>
+                                <option value="westbengal">West Bengal</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Query Type *</label>
+                            <select id="queryType" required>
+                                <option value="">Select Query Type</option>
+                                <option value="crop">Crop Issue</option>
+                                <option value="pest">Pest/Disease</option>
+                                <option value="weather">Weather Advisory</option>
+                                <option value="market">Market Information</option>
+                                <option value="scheme">Government Scheme</option>
+                                <option value="technical">Technical Issue</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Describe Your Issue *</label>
+                            <textarea id="contactMessage" rows="5" required placeholder="Please provide details about your farming issue, including crop type, problem description, and any images you might have..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Upload Images (Optional)</label>
+                            <div class="file-upload">
+                                <label for="supportImageUpload" class="btn btn-outline">
+                                    <i class="fas fa-camera"></i> Choose Image
+                                </label>
+                                <input type="file" id="supportImageUpload" accept="image/*" multiple style="display: none;">
+                                <span id="fileNames">No files chosen</span>
+                            </div>
+                            <small>Upload images of affected crops (max 5 images, 5MB each)</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Contact Method</label>
+                            <div class="contact-methods">
+                                <label class="radio">
+                                    <input type="radio" name="contactMethod" value="phone" checked>
+                                    <span>Phone Call</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="contactMethod" value="whatsapp">
+                                    <span>WhatsApp</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="contactMethod" value="email">
+                                    <span>Email</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Language</label>
+                            <select id="preferredLanguage">
+                                <option value="en">English</option>
+                                <option value="hi">Hindi</option>
+                                <option value="ml">Malayalam</option>
+                                <option value="ta">Tamil</option>
+                                <option value="te">Telugu</option>
+                                <option value="kn">Kannada</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fas fa-paper-plane"></i> Send Query
+                        </button>
+                        
+                        <p class="form-note">
+                            By submitting, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </p>
+                    </form>
+                </div>
+                
+                <div class="contact-info-sidebar">
+                    <h3>Other Ways to Reach Us</h3>
+                    
+                    <div class="contact-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <h4>WhatsApp Support</h4>
+                            <p>+91-9876543210</p>
+                            <small>24/7 text support</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email Support</h4>
+                            <p>help@krishimitra.com</p>
+                            <small>Response within 12 hours</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Head Office</h4>
+                            <p>Krishi Bhavan, Room No. 123</p>
+                            <p>New Delhi - 110001</p>
+                            <small>Mon-Fri: 9 AM - 6 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="social-support">
+                        <h4>Follow Us for Updates</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How quickly will I get a response?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For emergency helpline: Immediate response</p>
+                            <p>For general queries: Within 24 hours</p>
+                            <p>For field visits: Within 48 hours (depending on location)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Is the service free for farmers?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, all KrishiMitra services are completely free for registered farmers.</p>
+                            <p>Government scheme assistance and basic consultations are always free.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I get support in my local language?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we provide support in 10+ Indian languages including Hindi, Malayalam, Tamil, Telugu, Kannada, Bengali, Marathi, Gujarati, Punjabi, and Odia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What information should I provide for crop issues?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>For best assistance, provide:</p>
+                            <ul>
+                                <li>Crop name and variety</li>
+                                <li>Growth stage of crop</li>
+                                <li>Clear photos of affected plants</li>
+                                <li>Location and soil type</li>
+                                <li>Recent weather conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How do I track my government scheme application?</h4>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>You can track your application through:</p>
+                            <ul>
+                                <li>KrishiMitra app/website using your application ID</li>
+                                <li>SMS updates (if registered)</li>
+                                <li>Calling our helpline with application details</li>
+                                <li>Visiting the concerned Krishi Bhavan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Support Modals -->
+    <div class="modal" id="fieldVisitModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Request Emergency Field Visit</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="fieldVisitForm">
+                    <div class="form-group">
+                        <label>Nature of Emergency *</label>
+                        <select required>
+                            <option value="">Select Emergency Type</option>
+                            <option value="pest">Pest Outbreak</option>
+                            <option value="disease">Disease Spread</option>
+                            <option value="weather">Weather Damage</option>
+                            <option value="other">Other Emergency</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Crop Affected *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Area Affected (in acres) *</label>
+                        <input type="number" required min="0.1" step="0.1">
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Details</label>
+                        <textarea rows="3" placeholder="Describe the emergency situation..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="videoConsultationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Video Consultation</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label>Select Expert Category *</label>
+                        <select required>
+                            <option value="">Select Category</option>
+                            <option value="cereal">Cereal Crops Expert</option>
+                            <option value="horticulture">Horticulture Expert</option>
+                            <option value="organic">Organic Farming Expert</option>
+                            <option value="soil">Soil Scientist</option>
+                            <option value="market">Market Expert</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Date *</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Time Slot *</label>
+                        <select required>
+                            <option value="">Select Time</option>
+                            <option value="9-10">9:00 AM - 10:00 AM</option>
+                            <option value="10-11">10:00 AM - 11:00 AM</option>
+                            <option value="11-12">11:00 AM - 12:00 PM</option>
+                            <option value="2-3">2:00 PM - 3:00 PM</option>
+                            <option value="3-4">3:00 PM - 4:00 PM</option>
+                            <option value="4-5">4:00 PM - 5:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Language Preference *</label>
+                        <select required>
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ml">Malayalam</option>
+                            <option value="ta">Tamil</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Book Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

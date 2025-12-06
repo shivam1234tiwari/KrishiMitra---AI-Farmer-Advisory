@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Schemes - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Schemes Hero -->
+    <section class="schemes-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <a href="resources.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Resources
+                </a>
+                <h1><i class="fas fa-file-contract"></i> Government Schemes & Subsidies</h1>
+                <p class="hero-subtitle">Access financial support, subsidies, and welfare programs for farmers</p>
+                
+                <div class="scheme-stats">
+                    <div class="stat">
+                        <i class="fas fa-rupee-sign"></i>
+                        <h3>₹6,000/year</h3>
+                        <p>Direct Income Support</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-percentage"></i>
+                        <h3>Up to 90%</h3>
+                        <p>Subsidy on Farm Inputs</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>1.5% Premium</h3>
+                        <p>Crop Insurance Rate</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-tractor"></i>
+                        <h3>50% Subsidy</h3>
+                        <p>Farm Machinery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheme Checker -->
+    <section class="scheme-checker">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-search"></i> Check Your Eligibility
+            </h2>
+            
+            <div class="checker-container">
+                <div class="checker-form">
+                    <h3>Find Schemes You Qualify For</h3>
+                    
+                    <div class="form-group">
+                        <label>State</label>
+                        <select id="stateSelect">
+                            <option value="">Select State</option>
+                            <option value="kerala">Kerala</option>
+                            <option value="tamilnadu">Tamil Nadu</option>
+                            <option value="karnataka">Karnataka</option>
+                            <option value="maharashtra">Maharashtra</option>
+                            <option value="punjab">Punjab</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Farmer Category</label>
+                        <select id="categorySelect">
+                            <option value="">Select Category</option>
+                            <option value="small">Small Farmer (<2 ha)</option>
+                            <option value="marginal">Marginal Farmer (<1 ha)</option>
+                            <option value="medium">Medium Farmer (2-10 ha)</option>
+                            <option value="large">Large Farmer (>10 ha)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Crop Grown</label>
+                        <select id="cropSelect">
+                            <option value="">Select Crop</option>
+                            <option value="cereal">Cereals (Rice, Wheat)</option>
+                            <option value="horticulture">Horticulture</option>
+                            <option value="plantation">Plantation Crops</option>
+                            <option value="commercial">Commercial Crops</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Annual Income</label>
+                        <select id="incomeSelect">
+                            <option value="">Select Income Range</option>
+                            <option value="low">Below ₹1 lakh</option>
+                            <option value="medium">₹1-5 lakhs</option>
+                            <option value="high">Above ₹5 lakhs</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="checkEligibilityBtn">
+                        <i class="fas fa-check-circle"></i> Check Eligibility
+                    </button>
+                </div>
+                
+                <div class="checker-results">
+                    <h3>Eligible Schemes</h3>
+                    <div class="results-placeholder" id="resultsPlaceholder">
+                        <i class="fas fa-file-alt"></i>
+                        <p>Enter your details to see eligible schemes</p>
+                    </div>
+                    <div class="results-list" id="resultsList" style="display: none;">
+                        <!-- Results will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Major Central Schemes -->
+    <section class="central-schemes">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-university"></i> Major Central Government Schemes
+            </h2>
+            
+            <div class="schemes-grid">
+                <!-- PM-KISAN -->
+                <div class="scheme-card featured">
+                    <div class="scheme-badge">Most Popular</div>
+                    <div class="scheme-header">
+                        <div class="scheme-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="scheme-title">
+                            <h3>Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)</h3>
+                            <span class="scheme-status">Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scheme-content">
+                        <div class="benefit-highlight">
+                            <h4><i class="fas fa-gift"></i> Benefit: ₹6,000 per year</h4>
+                            <p>Direct income support in three equal installments</p>
+                        </div>
+                        
+                        <div class="eligibility">
+                            <h5><i class="fas fa-user-check"></i> Eligibility Criteria</h5>
+                            <ul>
+                                <li>All landholding farmer families</li>
+                                <li>Ownership of cultivable land</li>
+                                <li>Excludes institutional landholders</li>
+                                <li>Excludes income tax payers</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="application-process">
+                            <h5><i class="fas fa-file-signature"></i> Application Process</h5>
+                            <ol>
+                                <li>Visit nearest Common Service Centre (CSC)</li>
+                                <li>Submit land records and Aadhaar</li>
+                                <li>Fill PM-KISAN registration form</li>
+                                <li>Get registration ID for tracking</li>
+                            </ol>
+                        </div>
+                        
+                        <div class="important-dates">
+                            <h5><i class="fas fa-calendar-alt"></i> Payment Schedule</h5>
+                            <div class="dates">
+                                <div class="date">
+                                    <span class="period">April-July</span>
+                                    <span class="amount">₹2,000</span>
+                                </div>
+                                <div class="date">
+                                    <span class="period">August-November</span>
+                                    <span class="amount">₹2,000</span>
+                                </div>
+                                <div class="date">
+                                    <span class="period">December-March</span>
+                                    <span class="amount">₹2,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="scheme-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-file-download"></i> Download Form
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-check-circle"></i> Check Status
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-question-circle"></i> Get Help
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- PMFBY -->
+                <div class="scheme-card">
+                    <div class="scheme-header">
+                        <div class="scheme-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="scheme-title">
+                            <h3>Pradhan Mantri Fasal Bima Yojana (PMFBY)</h3>
+                            <span class="scheme-status">Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="scheme-content">
+                        <div class="benefit-highlight">
+                            <h4><i class="fas fa-gift"></i> Premium: 1.5-5% of sum insured</h4>
+                            <p>Comprehensive crop insurance against natural calamities</p>
+                        </div>
+                        
+                        <div class="coverage">
+                            <h5><i class="fas fa-umbrella"></i> Coverage</h5>
+                            <ul>
+                                <li>Yield loss due to natural calamities</li>
+                                <li>Prevented sowing/planting risk</li>
+                                <li>Post-harvest losses</li>
+                                <li>Localized calamities</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="premium-rates">
+                            <h5><i class="fas fa-percentage"></i> Premium Rates</h5>
+                            <table class="premium-table">
+                                <tr>
+                                    <th>Crop Season</th>
+                                    <th>Food & Oilseed Crops</th>
+                                    <th>Annual Commercial/Horticulture</th>
+                                </tr>
+                                <tr>
+                                    <td>Kharif</td>
+                                    <td>2% of sum insured</td>
+                                    <td>5% of sum insured</td>
+                                </tr>
+                                <tr>
+                                    <td>Rabi</td>
+                                    <td>1.5% of sum insured</td>
+                                    <td>5% of sum insured</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="scheme-actions">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-calculator"></i> Calculate Premium
+                        </button>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-file-claim"></i> Claim Process
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- State Specific Schemes -->
+    <section class="state-schemes">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-map-marker-alt"></i> State Specific Schemes
+            </h2>
+            
+            <div class="state-selector">
+                <label>Select Your State:</label>
+                <select id="stateSchemesSelect">
+                    <option value="kerala">Kerala</option>
+                    <option value="tamilnadu">Tamil Nadu</option>
+                    <option value="karnataka">Karnataka</option>
+                    <option value="maharashtra">Maharashtra</option>
+                    <option value="punjab">Punjab</option>
+                </select>
+            </div>
+            
+            <div class="state-schemes-content" id="kerala-schemes">
+                <h3><i class="fas fa-map-pin"></i> Kerala Agriculture Schemes</h3>
+                
+                <div class="schemes-list">
+                    <div class="state-scheme">
+                        <h4>Kerala Farmers Welfare Fund Scheme</h4>
+                        <p><strong>Benefit:</strong> Pension ₹2,500-5,000/month</p>
+                        <p><strong>Eligibility:</strong> Farmers aged 60+ with 25 years farming</p>
+                        <button class="btn btn-sm">Apply Now</button>
+                    </div>
+                    
+                    <div class="state-scheme">
+                        <h4>Subsidy for Organic Farming</h4>
+                        <p><strong>Benefit:</strong> 75% subsidy on organic inputs</p>
+                        <p><strong>Coverage:</strong> Biofertilizers, biopesticides, vermicompost</p>
+                        <button class="btn btn-sm">Apply Now</button>
+                    </div>
+                    
+                    <div class="state-scheme">
+                        <h4>Coconut Development Scheme</h4>
+                        <p><strong>Benefit:</strong> ₹15,000/ha for intercropping</p>
+                        <p><strong>Target:</strong> Coconut farmers for diversification</p>
+                        <button class="btn btn-sm">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Tracker -->
+    <section class="application-tracker">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-tasks"></i> Track Your Application
+            </h2>
+            
+            <div class="tracker-container">
+                <div class="tracker-input">
+                    <h3>Enter Application Details</h3>
+                    <div class="form-group">
+                        <label>Application ID</label>
+                        <input type="text" id="applicationId" placeholder="Enter your application number">
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" id="trackerMobile" placeholder="Registered mobile number">
+                    </div>
+                    <button class="btn btn-primary" id="trackApplicationBtn">
+                        <i class="fas fa-search"></i> Track Status
+                    </button>
+                </div>
+                
+                <div class="tracker-result">
+                    <h3>Application Status</h3>
+                    <div class="status-placeholder" id="statusPlaceholder">
+                        <i class="fas fa-clipboard-list"></i>
+                        <p>Enter application details to check status</p>
+                    </div>
+                    <div class="status-timeline" id="statusTimeline" style="display: none;">
+                        <!-- Timeline will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deadline Alert -->
+    <section class="deadline-alert">
+        <div class="container">
+            <div class="alert-content">
+                <div class="alert-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="alert-text">
+                    <h3>Upcoming Deadline</h3>
+                    <p>PM-KISAN installment verification for April-July 2024 ends on <strong>July 31, 2024</strong></p>
+                    <p class="small">Complete e-KYC at nearest CSC to receive next installment</p>
+                </div>
+                <button class="btn btn-warning">
+                    <i class="fas fa-calendar-alt"></i> View All Deadlines
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/schemes.js"></script>
+</body>
+</html>

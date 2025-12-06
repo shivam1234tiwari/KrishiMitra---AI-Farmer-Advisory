@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra - AI Farmer Advisory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Farmer</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h2>Your Digital Krishi Officer</h2>
+                <p class="hero-subtitle">Ask any farming question in your language. Get instant AI-powered advice on crops, pests, weather, and market trends.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>50,000+</h3>
+                        <p>Farmers Helped</p>
+                    </div>
+                    <div class="stat">
+                        <h3>24/7</h3>
+                        <p>AI Support</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10+</h3>
+                        <p>Languages</p>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary btn-lg" id="askQuestionBtn">
+                        <i class="fas fa-question-circle"></i> Ask AI Now
+                    </button>
+                    <button class="btn btn-outline btn-lg" id="voiceQueryBtn">
+                        <i class="fas fa-microphone"></i> Voice Query
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-image animate__animated animate__fadeInRight">
+                <div class="floating-icons">
+                    <i class="fas fa-cloud-sun rain-animation"></i>
+                    <i class="fas fa-tractor move-animation"></i>
+                    <i class="fas fa-leaf spin-animation"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Chat Interface -->
+    <section class="ai-chat-section" id="aiChatSection">
+        <div class="container">
+            <div class="chat-container animate__animated animate__slideInUp">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <i class="fas fa-robot"></i>
+                        <h3>KrishiMitra AI Assistant</h3>
+                        <span class="badge">Online</span>
+                    </div>
+                    <button class="btn btn-icon" id="closeChatBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <div class="chat-body" id="chatBody">
+                    <div class="message ai-message">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Namaskar! I'm your KrishiMitra AI assistant. Ask me anything about farming in your preferred language. You can ask about crop diseases, weather advice, market prices, or any farming-related query.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="input-methods">
+                        <button class="input-method active" data-type="text">
+                            <i class="fas fa-keyboard"></i> Text
+                        </button>
+                        <button class="input-method" data-type="voice">
+                            <i class="fas fa-microphone"></i> Voice
+                        </button>
+                        <button class="input-method" data-type="image">
+                            <i class="fas fa-camera"></i> Image
+                        </button>
+                    </div>
+                    
+                    <div class="chat-input-group">
+                        <textarea 
+                            id="chatInput" 
+                            placeholder="Type your farming question here... (e.g., How to treat leaf spot in banana?)"
+                            rows="3"
+                        ></textarea>
+                        
+                        <div class="input-actions">
+                            <label for="imageUpload" class="btn btn-icon">
+                                <i class="fas fa-image"></i>
+                            </label>
+                            <input type="file" id="imageUpload" accept="image/*" hidden>
+                            
+                            <button class="btn btn-primary" id="sendMessageBtn">
+                                <i class="fas fa-paper-plane"></i> Send
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="quick-questions">
+                        <p>Try asking:</p>
+                        <div class="quick-buttons">
+                            <button class="quick-btn" data-question="Best time to sow paddy in Kerala?">
+                                Best sowing time?
+                            </button>
+                            <button class="quick-btn" data-question="Organic pesticide for tomato worms?">
+                                Organic pesticides?
+                            </button>
+                            <button class="quick-btn" data-question="Current market price for coconut?">
+                                Market prices?
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">How KrishiMitra Helps You</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card animate__animated" data-animation="fadeInUp">
+                    <div class="feature-icon pulse-animation">
+                        <i class="fas fa-diagnoses"></i>
+                    </div>
+                    <h3>Disease Diagnosis</h3>
+                    <p>Upload crop images for instant disease identification and treatment recommendations</p>
+                </div>
+                
+                <div class="feature-card animate__animated" data-animation="fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                    </div>
+                    <h3>Weather Advisory</h3>
+                    <p>Get localized weather forecasts and farming recommendations based on conditions</p>
+                </div>
+                
+                <div class="feature-card animate__animated" data-animation="fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Market Intelligence</h3>
+                    <p>Real-time market prices, demand trends, and best selling times for your produce</p>
+                </div>
+                
+                <div class="feature-card animate__animated" data-animation="fadeInUp">
+                    <div class="feature-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Soil Health</h3>
+                    <p>Soil testing recommendations and customized fertilizer advice</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Preview -->
+    <section class="resources-preview">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Farming Resources</h2>
+                <a href="resources.html" class="btn btn-link">
+                    View All <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="resources-grid">
+                <div class="resource-card animate__animated" data-animation="flipInY">
+                    <div class="resource-image">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Crop Guides</h3>
+                        <p>Complete cultivation guides for 50+ crops</p>
+                        <a href="resources.html#crop-guides" class="btn btn-sm">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card animate__animated" data-animation="flipInY">
+                    <div class="resource-image">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Pest Library</h3>
+                        <p>Identify and control pests with images</p>
+                        <a href="resources.html#pest-library" class="btn btn-sm">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="resource-card animate__animated" data-animation="flipInY">
+                    <div class="resource-image">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="resource-content">
+                        <h3>Calculator Tools</h3>
+                        <p>Calculate fertilizer, irrigation, and costs</p>
+                        <a href="resources.html#calculators" class="btn btn-sm">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+    <script src="js/ai-service.js"></script>
+</body>
+</html>

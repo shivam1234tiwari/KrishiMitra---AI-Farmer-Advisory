@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Techniques - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Irrigation Hero -->
+    <section class="irrigation-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <a href="resources.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Resources
+                </a>
+                <h1><i class="fas fa-tint"></i> Smart Irrigation Techniques</h1>
+                <p class="hero-subtitle">Save water, increase yield with modern irrigation methods and scheduling</p>
+                
+                <div class="water-savings">
+                    <div class="saving-card">
+                        <i class="fas fa-percentage"></i>
+                        <h3>30-50%</h3>
+                        <p>Water Saving with Drip</p>
+                    </div>
+                    <div class="saving-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>20-40%</h3>
+                        <p>Yield Increase</p>
+                    </div>
+                    <div class="saving-card">
+                        <i class="fas fa-rupee-sign"></i>
+                        <h3>40-60%</h3>
+                        <p>Energy Saving</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Irrigation Calculator -->
+    <section class="irrigation-calculator">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-calculator"></i> Irrigation Water Calculator
+            </h2>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>Crop Type</label>
+                        <select id="cropType">
+                            <option value="rice">Rice</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="sugarcane">Sugarcane</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Area (Hectares)</label>
+                        <input type="number" id="area" value="1" min="0.1" step="0.1">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Soil Type</label>
+                        <select id="soilType">
+                            <option value="sandy">Sandy</option>
+                            <option value="loamy">Loamy</option>
+                            <option value="clay">Clay</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Irrigation Method</label>
+                        <select id="irrigationMethod">
+                            <option value="flood">Flood Irrigation</option>
+                            <option value="drip">Drip Irrigation</option>
+                            <option value="sprinkler">Sprinkler</option>
+                            <option value="furrow">Furrow</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="calculateBtn">
+                        <i class="fas fa-calculator"></i> Calculate Water Requirement
+                    </button>
+                </div>
+                
+                <div class="calculator-result">
+                    <h3>Water Requirement Analysis</h3>
+                    <div class="result-placeholder" id="resultPlaceholder">
+                        <i class="fas fa-tint"></i>
+                        <p>Enter details to calculate water requirement</p>
+                    </div>
+                    <div class="result-details" id="resultDetails" style="display: none;">
+                        <div class="result-item">
+                            <span class="label">Total Water Required</span>
+                            <span class="value" id="totalWater">0 L</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Irrigation Frequency</span>
+                            <span class="value" id="frequency">0 days</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Water Saving</span>
+                            <span class="value" id="waterSaving">0%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">Estimated Cost</span>
+                            <span class="value" id="estimatedCost">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Irrigation Methods -->
+    <section class="irrigation-methods">
+        <div class="container">
+            <h2 class="section-title">Modern Irrigation Methods</h2>
+            
+            <div class="methods-grid">
+                <div class="method-card">
+                    <div class="method-image drip"></div>
+                    <div class="method-content">
+                        <h3><i class="fas fa-tint"></i> Drip Irrigation</h3>
+                        <div class="method-stats">
+                            <span class="stat"><i class="fas fa-percentage"></i> 30-50% Water Saving</span>
+                            <span class="stat"><i class="fas fa-rupee-sign"></i> 40-60% Energy Saving</span>
+                            <span class="stat"><i class="fas fa-chart-line"></i> 20-40% Yield Increase</span>
+                        </div>
+                        <p>Water delivered directly to plant roots through network of pipes, valves, and emitters.</p>
+                        
+                        <div class="method-details">
+                            <h4>Best For:</h4>
+                            <ul>
+                                <li>Vegetables & Fruits</li>
+                                <li>Orchards & Plantations</li>
+                                <li>Row Crops</li>
+                                <li>Greenhouses</li>
+                            </ul>
+                            
+                            <h4>Components:</h4>
+                            <ul>
+                                <li>Drip Lines/Tubes</li>
+                                <li>Emitters/Drippers</li>
+                                <li>Filters & Valves</li>
+                                <li>Fertigation System</li>
+                            </ul>
+                            
+                            <h4>Government Subsidy:</h4>
+                            <p>Up to 55% for small & marginal farmers</p>
+                        </div>
+                        
+                        <button class="btn btn-outline view-details-btn">
+                            <i class="fas fa-info-circle"></i> View Detailed Guide
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="method-card">
+                    <div class="method-image sprinkler"></div>
+                    <div class="method-content">
+                        <h3><i class="fas fa-shower"></i> Sprinkler Irrigation</h3>
+                        <div class="method-stats">
+                            <span class="stat"><i class="fas fa-percentage"></i> 25-40% Water Saving</span>
+                            <span class="stat"><i class="fas fa-wind"></i> Suitable for Light Soils</span>
+                            <span class="stat"><i class="fas fa-expand"></i> Large Area Coverage</span>
+                        </div>
+                        <p>Water sprayed into air through nozzles, falling like rain on crop surface.</p>
+                        
+                        <div class="method-details">
+                            <h4>Best For:</h4>
+                            <ul>
+                                <li>Wheat & Cereals</li>
+                                <li>Pastures & Lawns</li>
+                                <li>Light Soils</li>
+                                <li>Undulating Land</li>
+                            </ul>
+                            
+                            <h4>Types:</h4>
+                            <ul>
+                                <li>Portable Sprinklers</li>
+                                <li>Solid Set Systems</li>
+                                <li>Center Pivot</li>
+                                <li>Rain Guns</li>
+                            </ul>
+                            
+                            <h4>Government Subsidy:</h4>
+                            <p>Up to 50% for various systems</p>
+                        </div>
+                        
+                        <button class="btn btn-outline view-details-btn">
+                            <i class="fas fa-info-circle"></i> View Detailed Guide
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop-specific Irrigation -->
+    <section class="crop-irrigation">
+        <div class="container">
+            <h2 class="section-title">Crop-specific Irrigation Guide</h2>
+            
+            <div class="crop-tabs">
+                <button class="crop-tab active" data-crop="rice">
+                    <i class="fas fa-rice"></i> Rice
+                </button>
+                <button class="crop-tab" data-crop="wheat">
+                    <i class="fas fa-bread-slice"></i> Wheat
+                </button>
+                <button class="crop-tab" data-crop="sugarcane">
+                    <i class="fas fa-candy-cane"></i> Sugarcane
+                </button>
+                <button class="crop-tab" data-crop="cotton">
+                    <i class="fas fa-tshirt"></i> Cotton
+                </button>
+            </div>
+            
+            <div class="crop-guide active" id="rice-irrigation">
+                <div class="guide-header">
+                    <h3><i class="fas fa-rice"></i> Rice Irrigation Management</h3>
+                    <p class="subtitle">Water requirement: 1000-1500 mm per crop cycle</p>
+                </div>
+                
+                <div class="irrigation-schedule">
+                    <h4><i class="fas fa-calendar-alt"></i> Critical Irrigation Stages</h4>
+                    <div class="schedule-timeline">
+                        <div class="timeline-phase">
+                            <div class="phase-header">
+                                <span class="phase-name">Nursery Stage</span>
+                                <span class="phase-days">0-25 days</span>
+                            </div>
+                            <div class="phase-details">
+                                <p><strong>Water Requirement:</strong> Continuous saturation</p>
+                                <p><strong>Depth:</strong> 2-3 cm standing water</p>
+                                <p><strong>Frequency:</strong> Daily irrigation</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-header">
+                                <span class="phase-name">Transplanting</span>
+                                <span class="phase-days">25-30 days</span>
+                            </div>
+                            <div class="phase-details">
+                                <p><strong>Water Requirement:</strong> Critical for establishment</p>
+                                <p><strong>Depth:</strong> 2-3 cm standing water</p>
+                                <p><strong>Frequency:</strong> Maintain constant level</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-header">
+                                <span class="phase-name">Tillering</span>
+                                <span class="phase-days">30-50 days</span>
+                            </div>
+                            <div class="phase-details">
+                                <p><strong>Water Requirement:</strong> Moderate</p>
+                                <p><strong>Depth:</strong> Alternate wetting-drying</p>
+                                <p><strong>Frequency:</strong> 3-5 days interval</p>
+                                <p class="tip"><i class="fas fa-lightbulb"></i> Allow field to dry for 2-3 days to promote tillering</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-header">
+                                <span class="phase-name">Panicle Initiation</span>
+                                <span class="phase-days">50-70 days</span>
+                            </div>
+                            <div class="phase-details">
+                                <p><strong>Water Requirement:</strong> Critical stage</p>
+                                <p><strong>Depth:</strong> 5-7 cm standing water</p>
+                                <p><strong>Frequency:</strong> Maintain water depth</p>
+                                <p class="warning"><i class="fas fa-exclamation-triangle"></i> Water stress at this stage reduces yield by 50-60%</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-header">
+                                <span class="phase-name">Flowering</span>
+                                <span class="phase-days">70-90 days</span>
+                            </div>
+                            <div class="phase-details">
+                                <p><strong>Water Requirement:</strong> Critical</p>
+                                <p><strong>Depth:</strong> 3-5 cm standing water</p>
+                                <p><strong>Frequency:</strong> Maintain moisture</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <div class="phase-header">
+                                <span class="phase-name">Grain Filling</span>
+                                <span class="phase-days">90-110 days</span>
+                            </div>
+                            <div class="phase-details">
+                                <p><strong>Water Requirement:</strong> Moderate</p>
+                                <p><strong>Depth:</strong> Gradual drying</p>
+                                <p><strong>Frequency:</strong> Stop irrigation 15 days before harvest</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="water-saving-techniques">
+                    <h4><i class="fas fa-leaf"></i> Water Saving Techniques for Rice</h4>
+                    <div class="techniques-grid">
+                        <div class="technique">
+                            <div class="technique-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h5>SRI Method</h5>
+                            <p><strong>Water Saving:</strong> 30-40%</p>
+                            <p>Alternate wetting and drying with wider spacing</p>
+                        </div>
+                        
+                        <div class="technique">
+                            <div class="technique-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h5>AWD Technique</h5>
+                            <p><strong>Water Saving:</strong> 15-30%</p>
+                            <p>Allow field to dry before next irrigation</p>
+                        </div>
+                        
+                        <div class="technique">
+                            <div class="technique-icon">
+                                <i class="fas fa-ruler-combined"></i>
+                            </div>
+                            <h5>Laser Leveling</h5>
+                            <p><strong>Water Saving:</strong> 10-15%</p>
+                            <p>Uniform water distribution across field</p>
+                        </div>
+                        
+                        <div class="technique">
+                            <div class="technique-icon">
+                                <i class="fas fa-recycle"></i>
+                            </div>
+                            <h5>Rainwater Harvesting</h5>
+                            <p><strong>Water Saving:</strong> 20-30%</p>
+                            <p>Store rainwater for irrigation use</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Schemes -->
+    <section class="irrigation-schemes">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-file-contract"></i> Government Irrigation Schemes
+            </h2>
+            
+            <div class="schemes-grid">
+                <div class="scheme-card">
+                    <div class="scheme-header">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <h3>PMKSY - Per Drop More Crop</h3>
+                            <span class="scheme-tag">Micro Irrigation</span>
+                        </div>
+                    </div>
+                    <div class="scheme-content">
+                        <p><strong>Subsidy:</strong> Up to 55% for small & marginal farmers</p>
+                        <p><strong>Components Covered:</strong> Drip & Sprinkler systems</p>
+                        <p><strong>Eligibility:</strong> All farmers with land ownership</p>
+                        <p><strong>Application:</strong> Through State Agriculture Department</p>
+                    </div>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-file-download"></i> Download Application
+                    </button>
+                </div>
+                
+                <div class="scheme-card">
+                    <div class="scheme-header">
+                        <i class="fas fa-water"></i>
+                        <div>
+                            <h3>AIBP - Major & Medium Irrigation</h3>
+                            <span class="scheme-tag">Large Scale</span>
+                        </div>
+                    </div>
+                    <div class="scheme-content">
+                        <p><strong>Coverage:</strong> Command area development</p>
+                        <p><strong>Benefits:</strong> Canal irrigation networks</p>
+                        <p><strong>Target:</strong> Water resource development</p>
+                        <p><strong>Status:</strong> Ongoing projects nationwide</p>
+                    </div>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-info-circle"></i> Check Project Status
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/irrigation.js"></script>
+</body>
+</html>

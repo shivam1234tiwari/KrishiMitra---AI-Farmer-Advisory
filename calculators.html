@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Calculators - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Calculators Hero -->
+    <section class="calculators-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <a href="resources.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Resources
+                </a>
+                <h1><i class="fas fa-calculator"></i> Farming Calculators</h1>
+                <p class="hero-subtitle">Plan better with our interactive farming calculators and tools</p>
+                
+                <div class="calculator-stats">
+                    <div class="stat">
+                        <i class="fas fa-seedling"></i>
+                        <h3>50+ Crops</h3>
+                        <p>Supported</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-save"></i>
+                        <h3>Save Results</h3>
+                        <p>For future reference</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-print"></i>
+                        <h3>Print Reports</h3>
+                        <p>Detailed analysis</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works on all devices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Categories -->
+    <section class="calculator-categories">
+        <div class="container">
+            <h2 class="section-title">Select Calculator Type</h2>
+            
+            <div class="categories-grid">
+                <div class="category-card" data-calculator="seed">
+                    <div class="category-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Seed Calculator</h3>
+                    <p>Calculate seed requirement based on spacing and area</p>
+                    <button class="btn btn-outline use-calculator-btn">
+                        <i class="fas fa-calculator"></i> Use Calculator
+                    </button>
+                </div>
+                
+                <div class="category-card" data-calculator="fertilizer">
+                    <div class="category-icon">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <h3>Fertilizer Calculator</h3>
+                    <p>Calculate exact fertilizer needs based on soil test</p>
+                    <button class="btn btn-outline use-calculator-btn">
+                        <i class="fas fa-calculator"></i> Use Calculator
+                    </button>
+                </div>
+                
+                <div class="category-card" data-calculator="irrigation">
+                    <div class="category-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Irrigation Calculator</h3>
+                    <p>Calculate water requirement and irrigation schedule</p>
+                    <button class="btn btn-outline use-calculator-btn">
+                        <i class="fas fa-calculator"></i> Use Calculator
+                    </button>
+                </div>
+                
+                <div class="category-card" data-calculator="profit">
+                    <div class="category-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Profit Calculator</h3>
+                    <p>Calculate input costs, yield, and profit margin</p>
+                    <button class="btn btn-outline use-calculator-btn">
+                        <i class="fas fa-calculator"></i> Use Calculator
+                    </button>
+                </div>
+                
+                <div class="category-card" data-calculator="loan">
+                    <div class="category-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Loan Calculator</h3>
+                    <p>Calculate EMI for agricultural loans</p>
+                    <button class="btn btn-outline use-calculator-btn">
+                        <i class="fas fa-calculator"></i> Use Calculator
+                    </button>
+                </div>
+                
+                <div class="category-card" data-calculator="subsidy">
+                    <div class="category-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Subsidy Calculator</h3>
+                    <p>Calculate subsidy amount for farm equipment</p>
+                    <button class="btn btn-outline use-calculator-btn">
+                        <i class="fas fa-calculator"></i> Use Calculator
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seed Calculator -->
+    <section class="calculator-section active" id="seed-calculator">
+        <div class="container">
+            <div class="calculator-header">
+                <h2><i class="fas fa-cube"></i> Seed Requirement Calculator</h2>
+                <p>Calculate exact seed quantity needed for your farm</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>Crop Type</label>
+                        <select id="seedCrop">
+                            <option value="rice">Rice (Paddy)</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="maize">Maize</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="pulses">Pulses</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Variety Type</label>
+                        <select id="seedVariety">
+                            <option value="hybrid">Hybrid</option>
+                            <option value="varietal">Varietal</option>
+                            <option value="local">Local/Landrace</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Planting Method</label>
+                            <select id="plantingMethod">
+                                <option value="transplanting">Transplanting</option>
+                                <option value="direct">Direct Seeding</option>
+                                <option value="dibbling">Dibbling</option>
+                                <option value="broadcasting">Broadcasting</option>
+                            </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Area (Hectares)</label>
+                            <input type="number" id="seedArea" value="1" min="0.1" step="0.1">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Spacing (cm)</label>
+                            <div class="spacing-inputs">
+                                <input type="number" id="rowSpacing" placeholder="Row" value="20">
+                                <span>×</span>
+                                <input type="number" id="plantSpacing" placeholder="Plant" value="15">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Germination Percentage (%)</label>
+                        <input type="number" id="germinationRate" value="85" min="1" max="100">
+                        <div class="range-slider">
+                            <input type="range" id="germinationSlider" min="1" max="100" value="85">
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="calculateSeedBtn">
+                        <i class="fas fa-calculator"></i> Calculate Seed Requirement
+                    </button>
+                </div>
+                
+                <div class="calculator-result">
+                    <div class="result-header">
+                        <h3>Seed Calculation Results</h3>
+                        <div class="result-actions">
+                            <button class="btn btn-icon" id="saveSeedResult">
+                                <i class="fas fa-save"></i>
+                            </button>
+                            <button class="btn btn-icon" id="printSeedResult">
+                                <i class="fas fa-print"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="result-placeholder" id="seedPlaceholder">
+                        <i class="fas fa-seedling"></i>
+                        <p>Enter details to calculate seed requirement</p>
+                    </div>
+                    
+                    <div class="result-details" id="seedResult" style="display: none;">
+                        <div class="result-summary">
+                            <div class="summary-item">
+                                <span class="label">Total Seeds Required</span>
+                                <span class="value" id="totalSeeds">0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Seed Weight Required</span>
+                                <span class="value" id="seedWeight">0 kg</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Seed Cost</span>
+                                <span class="value" id="seedCost">₹0</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="label">Plants per Hectare</span>
+                                <span class="value" id="plantsPerHa">0</span>
+                            </div>
+                        </div>
+                        
+                        <div class="result-breakdown">
+                            <h4>Calculation Breakdown</h4>
+                            <table class="breakdown-table">
+                                <tr>
+                                    <td>Area</td>
+                                    <td id="breakdownArea">0 ha</td>
+                                </tr>
+                                <tr>
+                                    <td>Spacing</td>
+                                    <td id="breakdownSpacing">0 × 0 cm</td>
+                                </tr>
+                                <tr>
+                                    <td>Plants per hectare</td>
+                                    <td id="breakdownPlants">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Germination rate</td>
+                                    <td id="breakdownGermination">0%</td>
+                                </tr>
+                                <tr>
+                                    <td>Seed rate (per ha)</td>
+                                    <td id="breakdownSeedRate">0 kg/ha</td>
+                                </tr>
+                            </table>
+                        </div>
+                        
+                        <div class="result-recommendations">
+                            <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                            <ul id="seedRecommendations">
+                                <li>Use certified seeds for better germination</li>
+                                <li>Treat seeds with fungicide before sowing</li>
+                                <li>Maintain proper seed storage conditions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fertilizer Calculator -->
+    <section class="calculator-section" id="fertilizer-calculator">
+        <div class="container">
+            <div class="calculator-header">
+                <h2><i class="fas fa-vial"></i> Fertilizer Requirement Calculator</h2>
+                <p>Calculate exact fertilizer needs based on soil test results</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-tabs">
+                        <button class="form-tab active" data-tab="soil-test">Based on Soil Test</button>
+                        <button class="form-tab" data-tab="crop-needs">Based on Crop Needs</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="soil-test-tab">
+                        <div class="form-group">
+                            <label>Crop Type</label>
+                            <select id="fertCrop">
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="maize">Maize</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="sugarcane">Sugarcane</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Target Yield (tons/ha)</label>
+                            <input type="number" id="targetYield" value="5" min="1" step="0.5">
+                        </div>
+                        
+                        <h4>Soil Test Values (kg/ha)</h4>
+                        <div class="soil-inputs">
+                            <div class="soil-input">
+                                <label>Available Nitrogen (N)</label>
+                                <input type="number" id="soilN" value="250" min="0">
+                                <span class="soil-status" id="nStatus">Medium</span>
+                            </div>
+                            <div class="soil-input">
+                                <label>Available Phosphorus (P₂O₅)</label>
+                                <input type="number" id="soilP" value="25" min="0">
+                                <span class="soil-status" id="pStatus">Low</span>
+                            </div>
+                            <div class="soil-input">
+                                <label>Available Potassium (K₂O)</label>
+                                <input type="number" id="soilK" value="150" min="0">
+                                <span class="soil-status" id="kStatus">Medium</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Organic Carbon (%)</label>
+                            <input type="number" id="organicCarbon" value="0.5" min="0" max="2" step="0.1">
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="crop-needs-tab">
+                        <div class="form-group">
+                            <label>Select Fertilizer Schedule</label>
+                            <select id="fertSchedule">
+                                <option value="recommended">Recommended Package</option>
+                                <option value="organic">Organic Package</option>
+                                <option value="integrated">Integrated (Chemical + Organic)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Area (Hectares)</label>
+                            <input type="number" id="fertArea" value="1" min="0.1" step="0.1">
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="calculateFertilizerBtn">
+                        <i class="fas fa-calculator"></i> Calculate Fertilizer
+                    </button>
+                </div>
+                
+                <div class="calculator-result">
+                    <div class="result-header">
+                        <h3>Fertilizer Calculation Results</h3>
+                        <div class="result-actions">
+                            <button class="btn btn-icon" id="saveFertResult">
+                                <i class="fas fa-save"></i>
+                            </button>
+                            <button class="btn btn-icon" id="printFertResult">
+                                <i class="fas fa-print"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="result-placeholder" id="fertPlaceholder">
+                        <i class="fas fa-vial"></i>
+                        <p>Enter details to calculate fertilizer requirement</p>
+                    </div>
+                    
+                    <div class="result-details" id="fertResult" style="display: none;">
+                        <div class="fert-recommendation">
+                            <h4>Recommended Fertilizer Application</h4>
+                            <table class="fert-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nutrient</th>
+                                        <th>Recommended (kg/ha)</th>
+                                        <th>Total Required (kg)</th>
+                                        <th>Fertilizer Equivalent</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nitrogen (N)</td>
+                                        <td id="recN">0 kg/ha</td>
+                                        <td id="totalN">0 kg</td>
+                                        <td id="fertN">0 kg Urea</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Phosphorus (P₂O₅)</td>
+                                        <td id="recP">0 kg/ha</td>
+                                        <td id="totalP">0 kg</td>
+                                        <td id="fertP">0 kg DAP</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Potassium (K₂O)</td>
+                                        <td id="recK">0 kg/ha</td>
+                                        <td id="totalK">0 kg</td>
+                                        <td id="fertK">0 kg MOP</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="fert-schedule">
+                            <h4><i class="fas fa-calendar-alt"></i> Application Schedule</h4>
+                            <div class="schedule-timeline">
+                                <div class="schedule-phase">
+                                    <span class="phase-name">Basal Application</span>
+                                    <span class="phase-fertilizer">50% N, 100% P, 50% K</span>
+                                </div>
+                                <div class="schedule-phase">
+                                    <span class="phase-name">1st Top Dressing (21 DAT)</span>
+                                    <span class="phase-fertilizer">25% N</span>
+                                </div>
+                                <div class="schedule-phase">
+                                    <span class="phase-name">2nd Top Dressing (45 DAT)</span>
+                                    <span class="phase-fertilizer">25% N, 50% K</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fert-cost">
+                            <h4><i class="fas fa-rupee-sign"></i> Estimated Cost</h4>
+                            <div class="cost-breakdown">
+                                <div class="cost-item">
+                                    <span class="label">Urea Cost</span>
+                                    <span class="value" id="ureaCost">₹0</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span class="label">DAP Cost</span>
+                                    <span class="value" id="dapCost">₹0</span>
+                                </div>
+                                <div class="cost-item">
+                                    <span class="label">MOP Cost</span>
+                                    <span class="value" id="mopCost">₹0</span>
+                                </div>
+                                <div class="cost-item total">
+                                    <span class="label">Total Fertilizer Cost</span>
+                                    <span class="value" id="totalFertCost">₹0</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profit Calculator -->
+    <section class="calculator-section" id="profit-calculator">
+        <div class="container">
+            <div class="calculator-header">
+                <h2><i class="fas fa-money-bill-wave"></i> Profit & Loss Calculator</h2>
+                <p>Calculate input costs, expected yield, and profit margin</p>
+            </div>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label>Crop Type</label>
+                        <select id="profitCrop">
+                            <option value="rice">Rice</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="maize">Maize</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="sugarcane">Sugarcane</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Area (Hectares)</label>
+                        <input type="number" id="profitArea" value="1" min="0.1" step="0.1">
+                    </div>
+                    
+                    <h4>Input Costs (per hectare)</h4>
+                    <div class="cost-inputs">
+                        <div class="cost-input">
+                            <label>Land Preparation</label>
+                            <input type="number" id="landPrepCost" value="8000" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Seeds & Planting Material</label>
+                            <input type="number" id="seedCostInput" value="3500" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Fertilizers</label>
+                            <input type="number" id="fertilizerCost" value="12000" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Plant Protection</label>
+                            <input type="number" id="pestControlCost" value="4000" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Irrigation</label>
+                            <input type="number" id="irrigationCost" value="6000" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Labor Charges</label>
+                            <input type="number" id="laborCost" value="25000" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Harvesting & Post-Harvest</label>
+                            <input type="number" id="harvestCost" value="8000" min="0">
+                        </div>
+                        <div class="cost-input">
+                            <label>Other Costs</label>
+                            <input type="number" id="otherCost" value="2000" min="0">
+                        </div>
+                    </div>
+                    
+                    <h4>Expected Returns</h4>
+                    <div class="return-inputs">
+                        <div class="return-input">
+                            <label>Expected Yield (tons/ha)</label>
+                            <input type="number" id="expectedYield" value="5" min="0" step="0.1">
+                        </div>
+                        <div class="return-input">
+                            <label>Expected Price (₹/kg)</label>
+                            <input type="number" id="expectedPrice" value="21" min="0" step="0.5">
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="calculateProfitBtn">
+                        <i class="fas fa-calculator"></i> Calculate Profit
+                    </button>
+                </div>
+                
+                <div class="calculator-result">
+                    <div class="result-header">
+                        <h3>Profit Analysis Results</h3>
+                        <div class="result-actions">
+                            <button class="btn btn-icon" id="saveProfitResult">
+                                <i class="fas fa-save"></i>
+                            </button>
+                            <button class="btn btn-icon" id="printProfitResult">
+                                <i class="fas fa-print"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="result-placeholder" id="profitPlaceholder">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Enter details to calculate profit analysis</p>
+                    </div>
+                    
+                    <div class="result-details" id="profitResult" style="display: none;">
+                        <div class="profit-summary">
+                            <div class="summary-card">
+                                <h4>Total Investment</h4>
+                                <div class="amount" id="totalInvestment">₹0</div>
+                                <p>Cost of cultivation per hectare</p>
+                            </div>
+                            <div class="summary-card">
+                                <h4>Expected Income</h4>
+                                <div class="amount" id="expectedIncome">₹0</div>
+                                <p>Gross income from crop sale</p>
+                            </div>
+                            <div class="summary-card highlight">
+                                <h4>Net Profit</h4>
+                                <div class="amount profit" id="netProfit">₹0</div>
+                                <p>Profit after all costs</p>
+                            </div>
+                        </div>
+                        
+                        <div class="profit-metrics">
+                            <h4><i class="fas fa-chart-pie"></i> Key Metrics</h4>
+                            <div class="metrics-grid">
+                                <div class="metric">
+                                    <span class="label">Cost of Production (₹/kg)</span>
+                                    <span class="value" id="costPerKg">₹0</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">Profit Margin</span>
+                                    <span class="value" id="profitMargin">0%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">Benefit:Cost Ratio</span>
+                                    <span class="value" id="bcRatio">0:1</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">Return on Investment</span>
+                                    <span class="value" id="roi">0%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cost-breakdown-chart">
+                            <h4><i class="fas fa-chart-pie"></i> Cost Breakdown</h4>
+                            <div class="chart-container">
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-pie"></i>
+                                    <p>Cost breakdown chart will appear here</p>
+                                </div>
+                            </div>
+                            <div class="cost-legends">
+                                <!-- Legends will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="profit-recommendations">
+                            <h4><i class="fas fa-lightbulb"></i> Optimization Suggestions</h4>
+                            <div class="recommendations-list" id="profitRecommendations">
+                                <!-- Recommendations will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Saved Calculations -->
+    <section class="saved-calculations">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-save"></i> Your Saved Calculations
+            </h2>
+            
+            <div class="saved-list" id="savedCalculations">
+                <div class="empty-state">
+                    <i class="fas fa-calculator"></i>
+                    <h4>No saved calculations yet</h4>
+                    <p>Save your calculation results for future reference</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/calculators.js"></script>
+</body>
+</html>

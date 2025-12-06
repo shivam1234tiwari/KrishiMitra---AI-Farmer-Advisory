@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Loading...</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html" class="active">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Container -->
+    <section class="profile-container">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            
+            <div class="profile-header animate__animated animate__fadeIn">
+                <div class="profile-avatar">
+                    <i class="fas fa-user-tie"></i>
+                    <div class="edit-btn" id="editAvatarBtn">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                </div>
+                
+                <div class="profile-info">
+                    <h2 id="profileName">Loading...</h2>
+                    <p class="profile-location" id="profileLocation">
+                        <i class="fas fa-map-marker-alt"></i> Loading...
+                    </p>
+                    <p class="profile-member-since" id="memberSince">
+                        <i class="fas fa-calendar-alt"></i> Member since Loading...
+                    </p>
+                    
+                    <div class="profile-stats">
+                        <div class="profile-stat">
+                            <h3 id="totalQueries">0</h3>
+                            <p>Questions Asked</p>
+                        </div>
+                        <div class="profile-stat">
+                            <h3 id="savedResources">0</h3>
+                            <p>Saved Resources</p>
+                        </div>
+                        <div class="profile-stat">
+                            <h3 id="aiInteractions">0</h3>
+                            <p>AI Interactions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="profile-tabs">
+                <button class="tab-btn active" data-tab="overview">
+                    <i class="fas fa-chart-line"></i> Overview
+                </button>
+                <button class="tab-btn" data-tab="queries">
+                    <i class="fas fa-question-circle"></i> My Queries
+                </button>
+                <button class="tab-btn" data-tab="saved">
+                    <i class="fas fa-bookmark"></i> Saved Items
+                </button>
+                <button class="tab-btn" data-tab="settings">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+            
+            <!-- Overview Tab -->
+            <div class="tab-content active" id="overview-tab">
+                <div class="overview-grid">
+                    <div class="overview-card">
+                        <h3><i class="fas fa-robot"></i> AI Usage Summary</h3>
+                        <div class="usage-chart" id="usageChart">
+                            <!-- Chart will be populated by JavaScript -->
+                            <div class="chart-placeholder">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>Your AI usage chart will appear here</p>
+                            </div>
+                        </div>
+                        <div class="usage-stats">
+                            <div class="usage-stat">
+                                <span class="stat-label">This Week</span>
+                                <span class="stat-value" id="weeklyUsage">0</span>
+                            </div>
+                            <div class="usage-stat">
+                                <span class="stat-label">This Month</span>
+                                <span class="stat-value" id="monthlyUsage">0</span>
+                            </div>
+                            <div class="usage-stat">
+                                <span class="stat-label">Total</span>
+                                <span class="stat-value" id="totalUsage">0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3><i class="fas fa-cloud-sun-rain"></i> Weather Alerts</h3>
+                        <div class="weather-alerts" id="weatherAlerts">
+                            <div class="alert-item">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <div class="alert-content">
+                                    <h4>Heavy Rain Alert</h4>
+                                    <p>Expect heavy rainfall in your area tomorrow</p>
+                                </div>
+                            </div>
+                            <div class="alert-item">
+                                <i class="fas fa-temperature-high"></i>
+                                <div class="alert-content">
+                                    <h4>Heat Wave Warning</h4>
+                                    <p>Temperature expected to reach 42°C next week</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-block" id="viewAllAlertsBtn">
+                            View All Alerts
+                        </button>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3><i class="fas fa-bell"></i> Recent Notifications</h3>
+                        <div class="notifications-list" id="notificationsList">
+                            <div class="notification-item">
+                                <i class="fas fa-rupee-sign"></i>
+                                <div class="notification-content">
+                                    <p>Coconut prices increased by 15% in your market</p>
+                                    <span class="notification-time">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-seedling"></i>
+                                <div class="notification-content">
+                                    <p>Time to apply second dose of fertilizer for rice crop</p>
+                                    <span class="notification-time">1 day ago</span>
+                                </div>
+                            </div>
+                            <div class="notification-item">
+                                <i class="fas fa-calendar-check"></i>
+                                <div class="notification-content">
+                                    <p>Your appointment with agri-expert is tomorrow</p>
+                                    <span class="notification-time">2 days ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline btn-block" id="viewAllNotificationsBtn">
+                            View All Notifications
+                        </button>
+                    </div>
+                    
+                    <div class="overview-card">
+                        <h3><i class="fas fa-lightbulb"></i> Personalized Tips</h3>
+                        <div class="tips-list" id="personalizedTips">
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Based on your queries, consider soil testing for better fertilizer management</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Your area is suitable for intercropping banana with coconut</p>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Check government subsidy for drip irrigation in your state</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-block" id="askForTipsBtn">
+                            <i class="fas fa-robot"></i> Get More Tips
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Queries Tab -->
+            <div class="tab-content" id="queries-tab">
+                <div class="queries-header">
+                    <h3>My Query History</h3>
+                    <div class="query-actions">
+                        <button class="btn btn-sm" id="filterQueriesBtn">
+                            <i class="fas fa-filter"></i> Filter
+                        </button>
+                        <button class="btn btn-sm btn-danger" id="clearHistoryBtn">
+                            <i class="fas fa-trash"></i> Clear History
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="query-filters" id="queryFilters" style="display: none;">
+                    <div class="filter-group">
+                        <label>Filter by Date:</label>
+                        <select id="dateFilter">
+                            <option value="all">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Filter by Type:</label>
+                        <select id="typeFilter">
+                            <option value="all">All Types</option>
+                            <option value="text">Text Query</option>
+                            <option value="voice">Voice Query</option>
+                            <option value="image">Image Analysis</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Sort by:</label>
+                        <select id="sortFilter">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="queries-list" id="queriesList">
+                    <!-- Query history will be loaded here -->
+                    <div class="empty-state">
+                        <i class="fas fa-question-circle"></i>
+                        <h4>No queries yet</h4>
+                        <p>Your farming questions and AI responses will appear here</p>
+                        <a href="index.html" class="btn btn-primary">
+                            <i class="fas fa-robot"></i> Ask AI Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="load-more" id="loadMoreQueries" style="display: none;">
+                    <button class="btn btn-outline btn-block" id="loadMoreBtn">
+                        <i class="fas fa-sync-alt"></i> Load More Queries
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Saved Items Tab -->
+            <div class="tab-content" id="saved-tab">
+                <div class="saved-header">
+                    <h3>My Saved Resources</h3>
+                    <button class="btn btn-sm" id="organizeSavedBtn">
+                        <i class="fas fa-folder"></i> Organize
+                    </button>
+                </div>
+                
+                <div class="saved-categories">
+                    <button class="category-btn active" data-category="all">
+                        All Items
+                    </button>
+                    <button class="category-btn" data-category="guides">
+                        Crop Guides
+                    </button>
+                    <button class="category-btn" data-category="pests">
+                        Pest Control
+                    </button>
+                    <button class="category-btn" data-category="schemes">
+                        Government Schemes
+                    </button>
+                    <button class="category-btn" data-category="market">
+                        Market Info
+                    </button>
+                </div>
+                
+                <div class="saved-items-grid" id="savedItemsGrid">
+                    <!-- Saved items will be loaded here -->
+                    <div class="empty-state">
+                        <i class="fas fa-bookmark"></i>
+                        <h4>No saved items</h4>
+                        <p>Save useful resources by clicking the bookmark icon</p>
+                        <a href="resources.html" class="btn btn-primary">
+                            <i class="fas fa-book"></i> Browse Resources
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3><i class="fas fa-user-cog"></i> Account Settings</h3>
+                        
+                        <form id="profileSettingsForm">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" id="settingsName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="settingsPhone" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>State</label>
+                                <select id="settingsState" required>
+                                    <option value="">Select State</option>
+                                    <option value="kerala">Kerala</option>
+                                    <option value="tamilnadu">Tamil Nadu</option>
+                                    <option value="karnataka">Karnataka</option>
+                                    <option value="maharashtra">Maharashtra</option>
+                                    <option value="punjab">Punjab</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>District</label>
+                                <input type="text" id="settingsDistrict" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Village</label>
+                                <input type="text" id="settingsVillage">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Changes
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-language"></i> Language & Region</h3>
+                        
+                        <div class="form-group">
+                            <label>Preferred Language</label>
+                            <select id="settingsLanguage">
+                                <option value="en">English</option>
+                                <option value="hi">Hindi</option>
+                                <option value="ml">Malayalam</option>
+                                <option value="ta">Tamil</option>
+                                <option value="te">Telugu</option>
+                                <option value="kn">Kannada</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Measurement Units</label>
+                            <select id="settingsUnits">
+                                <option value="metric">Metric (kg, hectare)</option>
+                                <option value="imperial">Imperial (acres, pounds)</option>
+                                <option value="local">Local Units (bigha, maund)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Currency</label>
+                            <select id="settingsCurrency">
+                                <option value="INR">Indian Rupee (₹)</option>
+                                <option value="USD">US Dollar ($)</option>
+                            </select>
+                        </div>
+                        
+                        <button class="btn btn-outline" id="saveLanguageBtn">
+                            <i class="fas fa-save"></i> Save Preferences
+                        </button>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-bell"></i> Notifications</h3>
+                        
+                        <div class="notification-settings">
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Weather Alerts</h4>
+                                    <p>Get alerts about weather changes in your area</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="weatherAlertsToggle" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Price Updates</h4>
+                                    <p>Receive market price updates for your crops</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="priceUpdatesToggle" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>AI Tips</h4>
+                                    <p>Personalized farming tips from AI</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="aiTipsToggle" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Government Schemes</h4>
+                                    <p>Updates about new government schemes</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="schemeUpdatesToggle" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="setting-item">
+                                <div class="setting-info">
+                                    <h4>Expert Appointments</h4>
+                                    <p>Reminders for expert consultations</p>
+                                </div>
+                                <label class="switch">
+                                    <input type="checkbox" id="appointmentRemindersToggle" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-outline" id="saveNotificationSettingsBtn">
+                            <i class="fas fa-save"></i> Save Settings
+                        </button>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3><i class="fas fa-shield-alt"></i> Privacy & Security</h3>
+                        
+                        <div class="security-settings">
+                            <div class="security-item">
+                                <h4>Change Password</h4>
+                                <button class="btn btn-sm" id="changePasswordBtn">
+                                    Change
+                                </button>
+                            </div>
+                            
+                            <div class="security-item">
+                                <h4>Two-Factor Authentication</h4>
+                                <label class="switch">
+                                    <input type="checkbox" id="twoFactorToggle">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            
+                            <div class="security-item">
+                                <h4>Data Sharing</h4>
+                                <p>Control how your data is used for research</p>
+                                <select id="dataSharingSelect">
+                                    <option value="anonymous">Anonymous Only</option>
+                                    <option value="limited">Limited Sharing</option>
+                                    <option value="none">No Sharing</option>
+                                </select>
+                            </div>
+                            
+                            <div class="security-item">
+                                <h4>Account Visibility</h4>
+                                <select id="accountVisibilitySelect">
+                                    <option value="public">Public</option>
+                                    <option value="private">Private</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="danger-zone">
+                            <h4><i class="fas fa-exclamation-triangle"></i> Danger Zone</h4>
+                            <button class="btn btn-danger" id="deleteAccountBtn">
+                                <i class="fas fa-trash"></i> Delete Account
+                            </button>
+                            <p class="warning-text">This action cannot be undone</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Change Password Modal -->
+    <div class="modal" id="changePasswordModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="passwordChangeForm">
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Update Password
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Account Modal -->
+    <div class="modal" id="deleteAccountModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Delete Account</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="warning-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Warning: This action is irreversible</h4>
+                    <p>All your data including query history, saved items, and profile information will be permanently deleted.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label>Enter your password to confirm</label>
+                    <input type="password" id="confirmDeletePassword" required>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn btn-danger" id="confirmDeleteBtn">
+                        Permanently Delete Account
+                    </button>
+                    <button class="btn btn-outline" id="cancelDeleteBtn">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/profile.js"></script>
+</body>
+</html>

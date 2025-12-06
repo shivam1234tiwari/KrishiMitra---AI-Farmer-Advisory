@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Intelligence - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Market Hero -->
+    <section class="market-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <a href="resources.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Resources
+                </a>
+                <h1><i class="fas fa-chart-line"></i> Market Intelligence & Prices</h1>
+                <p class="hero-subtitle">Real-time prices, demand trends, and smart selling strategies</p>
+                
+                <div class="market-stats">
+                    <div class="stat">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Live Updates</h3>
+                        <p>Real-time price tracking</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>500+ Markets</h3>
+                        <p>Nationwide coverage</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-bell"></i>
+                        <h3>Price Alerts</h3>
+                        <p>Get notified of price changes</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>AI Predictions</h3>
+                        <p>Future price forecasts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Price Checker -->
+    <section class="price-checker">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-search-dollar"></i> Check Live Market Prices
+            </h2>
+            
+            <div class="checker-container">
+                <div class="checker-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Select Commodity</label>
+                            <select id="commoditySelect">
+                                <option value="">Choose Commodity</option>
+                                <option value="rice">Rice</option>
+                                <option value="wheat">Wheat</option>
+                                <option value="sugarcane">Sugarcane</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="coconut">Coconut</option>
+                                <option value="banana">Banana</option>
+                                <option value="tomato">Tomato</option>
+                                <option value="onion">Onion</option>
+                                <option value="potato">Potato</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Select State</label>
+                            <select id="stateSelect">
+                                <option value="">Choose State</option>
+                                <option value="kerala">Kerala</option>
+                                <option value="tamilnadu">Tamil Nadu</option>
+                                <option value="karnataka">Karnataka</option>
+                                <option value="maharashtra">Maharashtra</option>
+                                <option value="punjab">Punjab</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Market Type</label>
+                            <select id="marketType">
+                                <option value="wholesale">Wholesale (Mandi)</option>
+                                <option value="retail">Retail</option>
+                                <option value="farmgate">Farm Gate</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="checkPricesBtn">
+                        <i class="fas fa-search"></i> Check Prices
+                    </button>
+                </div>
+                
+                <div class="price-results">
+                    <div class="results-header">
+                        <h3>Price Details</h3>
+                        <span class="update-time">Last updated: Today, 10:30 AM</span>
+                    </div>
+                    
+                    <div class="results-placeholder" id="pricePlaceholder">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Select commodity and location to view prices</p>
+                    </div>
+                    
+                    <div class="price-details" id="priceDetails" style="display: none;">
+                        <div class="price-card">
+                            <div class="commodity-info">
+                                <h4 id="commodityName">Rice</h4>
+                                <span class="grade" id="commodityGrade">Grade A</span>
+                            </div>
+                            <div class="price-info">
+                                <div class="price-item">
+                                    <span class="label">Current Price</span>
+                                    <span class="value" id="currentPrice">₹0/kg</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="label">Yesterday's Price</span>
+                                    <span class="value" id="yesterdayPrice">₹0/kg</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="label">Weekly Change</span>
+                                    <span class="value change positive" id="weeklyChange">+0%</span>
+                                </div>
+                                <div class="price-item">
+                                    <span class="label">Market</span>
+                                    <span class="value" id="marketName">-</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="price-trend">
+                            <h5><i class="fas fa-chart-area"></i> 7-Day Price Trend</h5>
+                            <div class="trend-chart" id="trendChart">
+                                <!-- Chart will be populated by JavaScript -->
+                                <div class="chart-placeholder">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <p>Price trend chart will appear here</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Commodities -->
+    <section class="popular-commodities">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-fire"></i> Today's Hot Commodities
+            </h2>
+            
+            <div class="commodities-grid">
+                <div class="commodity-card">
+                    <div class="commodity-header">
+                        <div class="commodity-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Banana (Nendran)</h3>
+                            <span class="location">Thrissur Market, Kerala</span>
+                        </div>
+                    </div>
+                    <div class="commodity-prices">
+                        <div class="price">
+                            <span class="label">Current</span>
+                            <span class="value">₹32/kg</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Change</span>
+                            <span class="value change positive">+12%</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Demand</span>
+                            <span class="value high">High</span>
+                        </div>
+                    </div>
+                    <div class="commodity-tip">
+                        <p><i class="fas fa-lightbulb"></i> Tip: Prices expected to rise further due to festive demand</p>
+                    </div>
+                </div>
+                
+                <div class="commodity-card">
+                    <div class="commodity-header">
+                        <div class="commodity-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <div>
+                            <h3>Coconut</h3>
+                            <span class="location">Pollachi Market, Tamil Nadu</span>
+                        </div>
+                    </div>
+                    <div class="commodity-prices">
+                        <div class="price">
+                            <span class="label">Current</span>
+                            <span class="value">₹38/kg</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Change</span>
+                            <span class="value change positive">+8%</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Demand</span>
+                            <span class="value medium">Medium</span>
+                        </div>
+                    </div>
+                    <div class="commodity-tip">
+                        <p><i class="fas fa-lightbulb"></i> Tip: Good time to sell stocked produce</p>
+                    </div>
+                </div>
+                
+                <div class="commodity-card">
+                    <div class="commodity-header">
+                        <div class="commodity-icon">
+                            <i class="fas fa-rice"></i>
+                        </div>
+                        <div>
+                            <h3>Rice (Ponni)</h3>
+                            <span class="location">Chennai Market, Tamil Nadu</span>
+                        </div>
+                    </div>
+                    <div class="commodity-prices">
+                        <div class="price">
+                            <span class="label">Current</span>
+                            <span class="value">₹48/kg</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Change</span>
+                            <span class="value change negative">-3%</span>
+                        </div>
+                        <div class="price">
+                            <span class="label">Demand</span>
+                            <span class="value stable">Stable</span>
+                        </div>
+                    </div>
+                    <div class="commodity-tip">
+                        <p><i class="fas fa-lightbulb"></i> Tip: Wait for prices to stabilize before selling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price Predictions -->
+    <section class="price-predictions">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-crystal-ball"></i> AI Price Predictions
+            </h2>
+            
+            <div class="predictions-container">
+                <div class="prediction-form">
+                    <h3>Get Price Forecast</h3>
+                    <div class="form-group">
+                        <label>Commodity</label>
+                        <select id="predictionCommodity">
+                            <option value="rice">Rice</option>
+                            <option value="banana">Banana</option>
+                            <option value="coconut">Coconut</option>
+                            <option value="tomato">Tomato</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Forecast Period</label>
+                        <select id="forecastPeriod">
+                            <option value="7">Next 7 days</option>
+                            <option value="30">Next 30 days</option>
+                            <option value="90">Next 3 months</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary" id="getPredictionBtn">
+                        <i class="fas fa-robot"></i> Get AI Prediction
+                    </button>
+                </div>
+                
+                <div class="prediction-result">
+                    <h3>Price Forecast</h3>
+                    <div class="result-placeholder" id="predictionPlaceholder">
+                        <i class="fas fa-chart-line"></i>
+                        <p>Select commodity to get price prediction</p>
+                    </div>
+                    <div class="forecast-details" id="forecastDetails" style="display: none;">
+                        <div class="forecast-summary">
+                            <h4 id="forecastCommodity">Rice Price Forecast</h4>
+                            <div class="summary-stats">
+                                <div class="stat">
+                                    <span class="label">Current Price</span>
+                                    <span class="value">₹45/kg</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">Expected Change</span>
+                                    <span class="value change positive">+15%</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="label">Confidence</span>
+                                    <span class="value">85%</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="forecast-trend">
+                            <h5><i class="fas fa-chart-line"></i> Predicted Trend</h5>
+                            <div class="trend-indicator">
+                                <div class="trend-up">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>Prices expected to rise</span>
+                                </div>
+                                <div class="trend-reasons">
+                                    <h6>Key Factors:</h6>
+                                    <ul>
+                                        <li>Festive season demand increase</li>
+                                        <li>Reduced supply from neighboring states</li>
+                                        <li>Transportation costs rising</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recommendation">
+                            <h5><i class="fas fa-lightbulb"></i> AI Recommendation</h5>
+                            <div class="recommendation-card">
+                                <div class="rec-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="rec-content">
+                                    <h6>Hold & Sell Later</h6>
+                                    <p>Best selling window: 15-30 days from now</p>
+                                    <p>Expected price range: ₹48-52/kg</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- e-NAM Integration -->
+    <section class="enam-integration">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-laptop"></i> Sell on e-NAM
+            </h2>
+            
+            <div class="enam-guide">
+                <div class="enam-benefits">
+                    <h3><i class="fas fa-check-circle"></i> Benefits of Selling on e-NAM</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit">
+                            <i class="fas fa-rupee-sign"></i>
+                            <h4>Better Prices</h4>
+                            <p>Access to buyers across India</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-truck"></i>
+                            <h4>Reduced Commission</h4>
+                            <p>Lower middlemen costs</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Transparent Process</h4>
+                            <p>No malpractices</p>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-bolt"></i>
+                            <h4>Quick Payment</h4>
+                            <p>Within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="enam-steps">
+                    <h3><i class="fas fa-list-ol"></i> How to Sell on e-NAM</h3>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Registration</h4>
+                                <p>Register at nearest e-NAM enabled mandi with Aadhaar and land records</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Quality Testing</h4>
+                                <p>Get produce tested at mandi laboratory for quality grading</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Online Auction</h4>
+                                <p>Produce listed for online bidding by registered buyers</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Payment</h4>
+                                <p>Receive payment directly to bank account within 24 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="enam-cta">
+                <h3>Ready to Sell Online?</h3>
+                <p>Connect with nearest e-NAM mandi and start getting better prices</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">
+                        <i class="fas fa-map-marker-alt"></i> Find Nearest e-NAM Mandi
+                    </button>
+                    <button class="btn btn-outline">
+                        <i class="fas fa-play-circle"></i> Watch Tutorial
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market News -->
+    <section class="market-news">
+        <div class="container">
+            <h2 class="section-title">
+                <i class="fas fa-newspaper"></i> Latest Market News
+            </h2>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-category">Export News</div>
+                    <h3>Basmati Rice Exports Rise 15%</h3>
+                    <p>India's basmati rice exports increased by 15% in Q1 2024, driven by Middle East demand.</p>
+                    <div class="news-meta">
+                        <span><i class="far fa-clock"></i> 2 hours ago</span>
+                        <span><i class="fas fa-tag"></i> Rice, Export</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-category">Policy Update</div>
+                    <h3>New MSP Announced for Kharif Crops</h3>
+                    <p>Government increases MSP for paddy by 5%, pulses by 7% for 2024-25 season.</p>
+                    <div class="news-meta">
+                        <span><i class="far fa-clock"></i> 1 day ago</span>
+                        <span><i class="fas fa-tag"></i> MSP, Policy</span>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-category">Weather Impact</div>
+                    <h3>Untimely Rains Affect Vegetable Prices</h3>
+                    <p>Tomato prices surge 40% due to crop damage from unseasonal rainfall in Maharashtra.</p>
+                    <div class="news-meta">
+                        <span><i class="far fa-clock"></i> 3 days ago</span>
+                        <span><i class="fas fa-tag"></i> Vegetables, Weather</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/market.js"></script>
+</body>
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Resources - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resources Hero -->
+    <section class="resources-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <h1>Complete Farming Resource Center</h1>
+                <p>Access expert guides, calculators, and tools for better farming decisions</p>
+                
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="resourceSearch" placeholder="Search resources (e.g., 'pesticide for rice', 'banana cultivation')">
+                        <button class="btn btn-primary" id="searchBtn">
+                            Search
+                        </button>
+                    </div>
+                    <div class="search-filters">
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                            <option value="crops">Crop Guides</option>
+                            <option value="pests">Pest Control</option>
+                            <option value="soil">Soil Health</option>
+                            <option value="irrigation">Irrigation</option>
+                            <option value="market">Market Info</option>
+                            <option value="schemes">Government Schemes</option>
+                        </select>
+                        <select id="languageFilter">
+                            <option value="">All Languages</option>
+                            <option value="en">English</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ml">Malayalam</option>
+                            <option value="ta">Tamil</option>
+                        </select>
+                        <select id="formatFilter">
+                            <option value="">All Formats</option>
+                            <option value="guide">Guides</option>
+                            <option value="video">Videos</option>
+                            <option value="calculator">Calculators</option>
+                            <option value="pdf">PDF Documents</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Categories -->
+    <section class="resources-container">
+        <div class="container">
+            <!-- Crop Guides -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header" id="crop-guides">
+                    <i class="fas fa-seedling"></i>
+                    <div>
+                        <h2>Crop Cultivation Guides</h2>
+                        <p>Complete guides for major crops with seasonal calendars</p>
+                    </div>
+                </div>
+                
+                <div class="resource-items">
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-rice"></i>
+                            <div>
+                                <h4>Rice Cultivation</h4>
+                                <span class="resource-level">Beginner</span>
+                            </div>
+                        </div>
+                        <p>Complete guide for paddy cultivation including varieties, sowing time, and harvesting</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="far fa-clock"></i> 45 min read</span>
+                                <span><i class="fas fa-language"></i> 5 languages</span>
+                            </div>
+                            <a href="crop-guides.html#rice" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-apple-alt"></i>
+                            <div>
+                                <h4>Banana Cultivation</h4>
+                                <span class="resource-level">Intermediate</span>
+                            </div>
+                        </div>
+                        <p>From planting to harvesting, pest management to marketing of banana crop</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="far fa-clock"></i> 60 min read</span>
+                                <span><i class="fas fa-language"></i> 6 languages</span>
+                            </div>
+                            <a href="crop-guides.html#banana" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-tree"></i>
+                            <div>
+                                <h4>Coconut Farming</h4>
+                                <span class="resource-level">Advanced</span>
+                            </div>
+                        </div>
+                        <p>Intercropping, value addition, and integrated farming in coconut plantations</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="far fa-clock"></i> 90 min read</span>
+                                <span><i class="fas fa-language"></i> 4 languages</span>
+                            </div>
+                            <a href="crop-guides.html#coconut" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-actions">
+                    <a href="crop-guides.html" class="btn btn-primary">
+                        View All Crop Guides <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Pest Management -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header" id="pest-library">
+                    <i class="fas fa-bug"></i>
+                    <div>
+                        <h2>Pest & Disease Management</h2>
+                        <p>Identify, prevent, and control common agricultural pests</p>
+                    </div>
+                </div>
+                
+                <div class="resource-items">
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-bacteria"></i>
+                            <div>
+                                <h4>Rice Diseases</h4>
+                                <span class="resource-tag">Image Guide</span>
+                            </div>
+                        </div>
+                        <p>Complete identification guide for rice blast, sheath blight, and bacterial leaf blight</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-images"></i> 50+ images</span>
+                                <span><i class="fas fa-vial"></i> Treatment Guide</span>
+                            </div>
+                            <a href="pest-management.html#rice" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-spider"></i>
+                            <div>
+                                <h4>Vegetable Pests</h4>
+                                <span class="resource-tag">Organic Focus</span>
+                            </div>
+                        </div>
+                        <p>Natural and organic control methods for common vegetable pests</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-leaf"></i> Organic Methods</span>
+                                <span><i class="fas fa-clock"></i> Seasonal Calendar</span>
+                            </div>
+                            <a href="pest-management.html#vegetables" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-crow"></i>
+                            <div>
+                                <h4>Bird & Animal Control</h4>
+                                <span class="resource-tag">Preventive</span>
+                            </div>
+                        </div>
+                        <p>Effective methods to protect crops from birds, monkeys, and wild animals</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-shield-alt"></i> Prevention</span>
+                                <span><i class="fas fa-tools"></i> DIY Solutions</span>
+                            </div>
+                            <a href="pest-management.html#animals" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-actions">
+                    <a href="pest-management.html" class="btn btn-primary">
+                        View All Pest Guides <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Soil & Fertilizer -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header" id="soil-health">
+                    <i class="fas fa-vial"></i>
+                    <div>
+                        <h2>Soil Health & Fertilizers</h2>
+                        <p>Soil testing, amendment, and balanced fertilization guides</p>
+                    </div>
+                </div>
+                
+                <div class="resource-items">
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-flask"></i>
+                            <div>
+                                <h4>Soil Testing Guide</h4>
+                                <span class="resource-tag">Free Service</span>
+                            </div>
+                        </div>
+                        <p>How to collect soil samples and interpret test results for better yield</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> Labs Nearby</span>
+                                <span><i class="fas fa-rupee-sign"></i> Subsidy Info</span>
+                            </div>
+                            <a href="soil-health.html" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-calculator"></i>
+                            <div>
+                                <h4>Fertilizer Calculator</h4>
+                                <span class="resource-tag">Interactive Tool</span>
+                            </div>
+                        </div>
+                        <p>Calculate exact fertilizer requirements based on soil test and crop</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-crop"></i> 30+ Crops</span>
+                                <span><i class="fas fa-mobile-alt"></i> Mobile Friendly</span>
+                            </div>
+                            <a href="calculators.html#fertilizer" class="view-btn">
+                                Open Calculator <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-recycle"></i>
+                            <div>
+                                <h4>Organic Manure Guide</h4>
+                                <span class="resource-tag">Sustainable</span>
+                            </div>
+                        </div>
+                        <p>Preparation and application of vermicompost, FYM, and green manure</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-home"></i> DIY Methods</span>
+                                <span><i class="fas fa-video"></i> Video Tutorials</span>
+                            </div>
+                            <a href="organic-farming.html#manure" class="view-btn">
+                                View Guide <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Government Schemes -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header" id="government-schemes">
+                    <i class="fas fa-file-contract"></i>
+                    <div>
+                        <h2>Government Schemes & Subsidies</h2>
+                        <p>Complete information about agricultural schemes and application process</p>
+                    </div>
+                </div>
+                
+                <div class="resource-items">
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-rupee-sign"></i>
+                            <div>
+                                <h4>PM-KISAN Scheme</h4>
+                                <span class="resource-tag">Direct Benefit</span>
+                            </div>
+                        </div>
+                        <p>₹6,000 annual income support, eligibility, and application process</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-user-check"></i> Eligibility Check</span>
+                                <span><i class="fas fa-file-download"></i> Forms Download</span>
+                            </div>
+                            <a href="schemes.html#pm-kisan" class="view-btn">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-tractor"></i>
+                            <div>
+                                <h4>Farm Machinery Subsidy</h4>
+                                <span class="resource-tag">Up to 50%</span>
+                            </div>
+                        </div>
+                        <p>Subsidy on tractors, harvesters, and other farm equipment</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-percentage"></i> Subsidy Calculator</span>
+                                <span><i class="fas fa-map-marker-alt"></i> Dealer Locator</span>
+                            </div>
+                            <a href="schemes.html#machinery" class="view-btn">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Crop Insurance (PMFBY)</h4>
+                                <span class="resource-tag">Risk Coverage</span>
+                            </div>
+                        </div>
+                        <p>Protect your crops from natural calamities with government insurance</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-calculator"></i> Premium Calculator</span>
+                                <span><i class="fas fa-file-claim"></i> Claim Process</span>
+                            </div>
+                            <a href="schemes.html#insurance" class="view-btn">
+                                View Details <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Market Information -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header" id="market-prices">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <h2>Market Information</h2>
+                        <p>Real-time prices, demand trends, and marketing strategies</p>
+                    </div>
+                </div>
+                
+                <div class="resource-items">
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h4>Live Market Prices</h4>
+                                <span class="resource-tag">Real-time</span>
+                            </div>
+                        </div>
+                        <p>Check current prices in nearby mandis and wholesale markets</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-sync-alt"></i> Auto Update</span>
+                                <span><i class="fas fa-bell"></i> Price Alerts</span>
+                            </div>
+                            <a href="market.html#prices" class="view-btn">
+                                Check Prices <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Seasonal Price Trends</h4>
+                                <span class="resource-tag">Historical Data</span>
+                            </div>
+                        </div>
+                        <p>When to sell for maximum profit based on 5-year price patterns</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-chart-bar"></i> Trend Analysis</span>
+                                <span><i class="fas fa-lightbulb"></i> Selling Tips</span>
+                            </div>
+                            <a href="market.html#trends" class="view-btn">
+                                View Trends <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <h4>e-NAM Guide</h4>
+                                <span class="resource-tag">Online Trading</span>
+                            </div>
+                        </div>
+                        <p>How to sell your produce online through National Agricultural Market</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-laptop"></i> Online Platform</span>
+                                <span><i class="fas fa-handshake"></i> Buyer Network</span>
+                            </div>
+                            <a href="market.html#enam" class="view-btn">
+                                Learn More <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools & Calculators -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header" id="calculators">
+                    <i class="fas fa-calculator"></i>
+                    <div>
+                        <h2>Farming Calculators</h2>
+                        <p>Interactive tools for planning and decision making</p>
+                    </div>
+                </div>
+                
+                <div class="resource-items">
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-cube"></i>
+                            <div>
+                                <h4>Seed Calculator</h4>
+                                <span class="resource-tag">Planning Tool</span>
+                            </div>
+                        </div>
+                        <p>Calculate seed requirement based on spacing and field size</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-crop"></i> 50+ Crops</span>
+                                <span><i class="fas fa-save"></i> Save Results</span>
+                            </div>
+                            <a href="calculators.html#seed" class="view-btn">
+                                Open Calculator <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <h4>Irrigation Calculator</h4>
+                                <span class="resource-tag">Water Saving</span>
+                            </div>
+                        </div>
+                        <p>Calculate water requirement and irrigation schedule</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-cloud-rain"></i> Weather Based</span>
+                                <span><i class="fas fa-leaf"></i> Crop Specific</span>
+                            </div>
+                            <a href="calculators.html#irrigation" class="view-btn">
+                                Open Calculator <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="resource-item">
+                        <div class="resource-item-header">
+                            <i class="fas fa-money-bill-wave"></i>
+                            <div>
+                                <h4>Profit Calculator</h4>
+                                <span class="resource-tag">Financial Planning</span>
+                            </div>
+                        </div>
+                        <p>Calculate input costs, expected yield, and profit margin</p>
+                        <div class="resource-item-footer">
+                            <div class="resource-meta">
+                                <span><i class="fas fa-chart-pie"></i> Cost Breakdown</span>
+                                <span><i class="fas fa-lightbulb"></i> Optimization Tips</span>
+                            </div>
+                            <a href="calculators.html#profit" class="view-btn">
+                                Open Calculator <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Video Resources -->
+            <div class="resource-category animate__animated" data-animation="fadeInUp">
+                <div class="category-header">
+                    <i class="fas fa-video"></i>
+                    <div>
+                        <h2>Video Tutorials</h2>
+                        <p>Step-by-step visual guides in local languages</p>
+                    </div>
+                </div>
+                
+                <div class="video-grid">
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="video-info">
+                            <h4>Organic Pesticide Preparation</h4>
+                            <p>Learn to make natural pesticides at home</p>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock"></i> 15 min</span>
+                                <span><i class="fas fa-language"></i> Hindi</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="video-info">
+                            <h4>Drip Irrigation Setup</h4>
+                            <p>Complete guide to install drip irrigation system</p>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock"></i> 25 min</span>
+                                <span><i class="fas fa-language"></i> Malayalam</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-item">
+                        <div class="video-thumbnail">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <div class="video-info">
+                            <h4>Soil Testing at Home</h4>
+                            <p>Simple methods to test soil without laboratory</p>
+                            <div class="video-meta">
+                                <span><i class="far fa-clock"></i> 20 min</span>
+                                <span><i class="fas fa-language"></i> Tamil</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-content">
+                <h2>Download Resource PDFs</h2>
+                <p>Access complete farming guides in PDF format for offline use</p>
+                
+                <div class="download-grid">
+                    <div class="download-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Complete Rice Guide</h4>
+                        <p>50-page detailed guide with images</p>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download (5MB)
+                        </button>
+                    </div>
+                    
+                    <div class="download-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Pest Identification Chart</h4>
+                        <p>Color chart for common pests</p>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download (3MB)
+                        </button>
+                    </div>
+                    
+                    <div class="download-card">
+                        <i class="fas fa-file-pdf"></i>
+                        <h4>Government Scheme Booklet</h4>
+                        <p>Complete scheme details and forms</p>
+                        <button class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download (8MB)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content animate__animated animate__pulse">
+                <h2>Can't Find What You Need?</h2>
+                <p>Ask our AI assistant for personalized farming advice</p>
+                <div class="cta-buttons">
+                    <a href="index.html#aiChatSection" class="btn btn-primary btn-lg">
+                        <i class="fas fa-robot"></i> Ask AI Assistant
+                    </a>
+                    <a href="support.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-headset"></i> Contact Expert
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

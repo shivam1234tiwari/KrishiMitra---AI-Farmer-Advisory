@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra - Sign Up</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <div class="auth-left animate__animated animate__fadeInLeft">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <h1>KrishiMitra</h1>
+            </div>
+            <div class="auth-illustration">
+                <i class="fas fa-tractor"></i>
+                <h2>Join India's Digital Farming Revolution</h2>
+                <p>Get AI-powered farming advice in your language</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Expert Advice</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-language"></i>
+                    <span>Multi-language Support</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-camera"></i>
+                    <span>Image Analysis</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Live Expert Support</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="auth-right animate__animated animate__fadeInRight">
+            <form id="signupForm" class="auth-form">
+                <h2>Create Account</h2>
+                <p class="subtitle">Join thousands of farmers using KrishiMitra</p>
+                
+                <div class="form-group">
+                    <label for="fullName">
+                        <i class="fas fa-user"></i> Full Name
+                    </label>
+                    <input type="text" id="fullName" required>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">
+                        <i class="fas fa-phone"></i> Phone Number
+                    </label>
+                    <input type="tel" id="phone" required>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="state">
+                        <i class="fas fa-map-marker-alt"></i> State
+                    </label>
+                    <select id="state" required>
+                        <option value="">Select State</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="tamilnadu">Tamil Nadu</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="punjab">Punjab</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="language">
+                        <i class="fas fa-language"></i> Preferred Language
+                    </label>
+                    <select id="language" required>
+                        <option value="">Select Language</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="english">English</option>
+                        <option value="malayalam">Malayalam</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="kannada">Kannada</option>
+                    </select>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">
+                        <i class="fas fa-lock"></i> Password
+                    </label>
+                    <input type="password" id="password" required>
+                    <div class="error-message"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">
+                        <i class="fas fa-lock"></i> Confirm Password
+                    </label>
+                    <input type="password" id="confirmPassword" required>
+                    <div class="error-message"></div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </button>
+                
+                <div class="auth-links">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
+                
+                <div class="terms">
+                    <p>By signing up, you agree to our <a href="#">Terms & Conditions</a></p>
+                </div>
+            </form>
+            
+            <div class="language-selector">
+                <select id="siteLanguage">
+                    <option value="en">English</option>
+                    <option value="hi">हिंदी</option>
+                    <option value="ml">മലയാളം</option>
+                    <option value="ta">தமிழ்</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

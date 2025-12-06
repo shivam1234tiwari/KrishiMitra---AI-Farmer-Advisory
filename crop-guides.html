@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Cultivation Guides - KrishiMitra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo" id="homeBtn">
+                    <i class="fas fa-seedling"></i>
+                    <h1>KrishiMitra</h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                    <a href="resources.html" class="nav-link active">
+                        <i class="fas fa-book"></i> Resources
+                    </a>
+                    <a href="support.html" class="nav-link">
+                        <i class="fas fa-phone-alt"></i> Support
+                    </a>
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </div>
+                
+                <div class="user-actions">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <div class="language-selector-small">
+                        <select id="currentLanguage">
+                            <option value="en">EN</option>
+                            <option value="hi">HI</option>
+                            <option value="ml">ML</option>
+                            <option value="ta">TA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="user-profile" id="userProfile">
+                        <div class="avatar" id="userAvatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <span id="userName">Guest</span>
+                        <div class="dropdown" id="profileDropdown">
+                            <a href="profile.html">
+                                <i class="fas fa-user-circle"></i> Profile
+                            </a>
+                            <a href="login.html" id="logoutBtn">
+                                <i class="fas fa-sign-out-alt"></i> Login
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <button class="menu-toggle" id="menuToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Crop Guides Hero -->
+    <section class="resource-detail-hero">
+        <div class="container">
+            <div class="hero-content animate__animated animate__fadeInUp">
+                <a href="resources.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Resources
+                </a>
+                <h1><i class="fas fa-seedling"></i> Crop Cultivation Guides</h1>
+                <p class="hero-subtitle">Complete cultivation techniques for major crops with seasonal calendars and best practices</p>
+                
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Seasonal Planning</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-tint"></i>
+                        <span>Irrigation Guide</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-vial"></i>
+                        <span>Fertilizer Schedule</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bug"></i>
+                        <span>Pest Management</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span>Cost & Profit Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Navigation -->
+    <section class="crop-navigation">
+        <div class="container">
+            <div class="nav-container">
+                <h3>Browse Crops</h3>
+                <div class="crop-tabs">
+                    <button class="crop-tab active" data-crop="rice">
+                        <i class="fas fa-rice"></i> Rice
+                    </button>
+                    <button class="crop-tab" data-crop="banana">
+                        <i class="fas fa-apple-alt"></i> Banana
+                    </button>
+                    <button class="crop-tab" data-crop="coconut">
+                        <i class="fas fa-tree"></i> Coconut
+                    </button>
+                    <button class="crop-tab" data-crop="vegetables">
+                        <i class="fas fa-carrot"></i> Vegetables
+                    </button>
+                    <button class="crop-tab" data-crop="spices">
+                        <i class="fas fa-pepper-hot"></i> Spices
+                    </button>
+                    <button class="crop-tab" data-crop="pulses">
+                        <i class="fas fa-seedling"></i> Pulses
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rice Guide -->
+    <section class="crop-guide active" id="rice-guide">
+        <div class="container">
+            <div class="guide-header">
+                <div class="crop-icon">
+                    <i class="fas fa-rice"></i>
+                </div>
+                <div class="crop-title">
+                    <h2>Rice Cultivation Guide</h2>
+                    <p class="crop-subtitle">Oryza sativa - India's staple food crop</p>
+                    <div class="crop-tags">
+                        <span class="tag">Kharif & Rabi</span>
+                        <span class="tag">120-150 days</span>
+                        <span class="tag">Water Intensive</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="rice-speak-btn">
+                    <i class="fas fa-volume-up"></i> Listen Guide
+                </button>
+            </div>
+            
+            <div class="guide-content">
+                <div class="content-grid">
+                    <!-- Quick Stats -->
+                    <div class="stats-card">
+                        <h3><i class="fas fa-chart-bar"></i> Quick Stats</h3>
+                        <div class="stats-grid">
+                            <div class="stat">
+                                <span class="stat-label">Yield Potential</span>
+                                <span class="stat-value">4-6 tons/ha</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Water Requirement</span>
+                                <span class="stat-value">1000-1500 mm</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Growing Season</span>
+                                <span class="stat-value">June-Nov/Dec-Mar</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">MSP (2024)</span>
+                                <span class="stat-value">₹2,040-2,183/q</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Seasonal Calendar -->
+                    <div class="calendar-card">
+                        <h3><i class="fas fa-calendar-alt"></i> Seasonal Calendar</h3>
+                        <div class="seasonal-calendar">
+                            <div class="season">
+                                <h4>Kharif (June-November)</h4>
+                                <div class="season-timeline">
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Nursery</span>
+                                        <span class="phase-date">Jun-Jul</span>
+                                    </div>
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Transplanting</span>
+                                        <span class="phase-date">Jul-Aug</span>
+                                    </div>
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Vegetative</span>
+                                        <span class="phase-date">Aug-Sep</span>
+                                    </div>
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Reproductive</span>
+                                        <span class="phase-date">Sep-Oct</span>
+                                    </div>
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Harvesting</span>
+                                        <span class="phase-date">Oct-Nov</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="season">
+                                <h4>Rabi (December-March)</h4>
+                                <div class="season-timeline">
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Nursery</span>
+                                        <span class="phase-date">Nov-Dec</span>
+                                    </div>
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Transplanting</span>
+                                        <span class="phase-date">Dec-Jan</span>
+                                    </div>
+                                    <div class="timeline-phase">
+                                        <span class="phase-name">Harvesting</span>
+                                        <span class="phase-date">Mar-Apr</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detailed Sections -->
+                <div class="detailed-sections">
+                    <!-- Varieties -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-dna"></i> Recommended Varieties</h3>
+                        <div class="varieties-grid">
+                            <div class="variety">
+                                <h4>High Yielding Varieties</h4>
+                                <ul>
+                                    <li><strong>Pusa Basmati 1509:</strong> Early maturing (115 days), aromatic</li>
+                                    <li><strong>IR-64:</strong> Medium duration, disease resistant</li>
+                                    <li><strong>Samba Mahsuri:</strong> Fine grain, high market value</li>
+                                    <li><strong>Swarna:</strong> Popular in Eastern India</li>
+                                </ul>
+                            </div>
+                            <div class="variety">
+                                <h4>Hybrid Varieties</h4>
+                                <ul>
+                                    <li><strong>DRRH 3:</strong> 130 days, yield 7-8 t/ha</li>
+                                    <li><strong>PA 6444:</strong> Suitable for saline soils</li>
+                                    <li><strong>Pro Agro 6444:</strong> Bold grain, high yield</li>
+                                </ul>
+                            </div>
+                            <div class="variety">
+                                <h4>Special Purpose</h4>
+                                <ul>
+                                    <li><strong>Jaya:</strong> Drought tolerant</li>
+                                    <li><strong>CR Dhan 801:</strong> Submergence tolerant</li>
+                                    <li><strong>DRR Dhan 44:</strong> Zinc rich</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Land Preparation -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-tractor"></i> Land Preparation</h3>
+                        <div class="steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h4>Initial Plowing</h4>
+                                    <p>Deep plowing (20-25 cm) immediately after harvest of previous crop. Use moldboard plow or disc plow.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h4>Harrowing</h4>
+                                    <p>2-3 harrowings at 10-day intervals to break clods and incorporate stubble.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h4>Puddling</h4>
+                                    <p>Puddle field with 5-10 cm standing water. Perfect puddling: soil should be soft to knee depth.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h4>Leveling</h4>
+                                    <p>Use wooden plank or laser leveler to ensure uniform water depth (2-3 cm variation max).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nursery Management -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-seedling"></i> Nursery Management</h3>
+                        <div class="nursery-guide">
+                            <div class="nursery-step">
+                                <h4>Seed Rate</h4>
+                                <p>20-25 kg/ha for transplanting, 40-50 kg/ha for direct seeding</p>
+                            </div>
+                            <div class="nursery-step">
+                                <h4>Seed Treatment</h4>
+                                <ul>
+                                    <li>Soak seeds in water for 12 hours</li>
+                                    <li>Treat with Carbendazim 50WP @ 2g/kg seed</li>
+                                    <li>Or use Trichoderma viride @ 4g/kg seed</li>
+                                    <li>For zinc deficiency: ZnSO₄ @ 4g/kg seed</li>
+                                </ul>
+                            </div>
+                            <div class="nursery-step">
+                                <h4>Nursery Bed Preparation</h4>
+                                <ul>
+                                    <li>Size: 10m × 1.2m for 1 kg seed</li>
+                                    <li>Soil: Fine tilth, well decomposed FYM</li>
+                                    <li>Fertilizer: 10g N, 8g P₂O₅, 5g K₂O per m²</li>
+                                    <li>Water: Maintain moist conditions</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Transplanting -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-hand-holding-water"></i> Transplanting & Spacing</h3>
+                        <div class="transplanting-guide">
+                            <div class="spacing-card">
+                                <h4>Ideal Age for Transplanting</h4>
+                                <p>18-25 days old seedlings (4-5 leaf stage)</p>
+                            </div>
+                            <div class="spacing-card">
+                                <h4>Spacing Recommendations</h4>
+                                <table class="spacing-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Variety Type</th>
+                                            <th>Row to Row</th>
+                                            <th>Plant to Plant</th>
+                                            <th>Plants/ha</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Tall Varieties</td>
+                                            <td>20 cm</td>
+                                            <td>15 cm</td>
+                                            <td>333,333</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Medium Varieties</td>
+                                            <td>20 cm</td>
+                                            <td>10 cm</td>
+                                            <td>500,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Dwarf Varieties</td>
+                                            <td>15 cm</td>
+                                            <td>10 cm</td>
+                                            <td>666,666</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Hybrids</td>
+                                            <td>25 cm</td>
+                                            <td>15 cm</td>
+                                            <td>266,666</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="spacing-card">
+                                <h4>Transplanting Tips</h4>
+                                <ul>
+                                    <li>Transplant in evening to reduce shock</li>
+                                    <li>Maintain 2-3 cm water depth</li>
+                                    <li>Transplant 2-3 seedlings per hill</li>
+                                    <li>Plant at 2-3 cm depth</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Water Management -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-tint"></i> Water Management</h3>
+                        <div class="water-management">
+                            <div class="water-phase">
+                                <h4>Critical Stages for Irrigation</h4>
+                                <div class="stages">
+                                    <div class="stage">
+                                        <span class="stage-name">Nursery</span>
+                                        <span class="stage-water">Continuous saturation</span>
+                                    </div>
+                                    <div class="stage">
+                                        <span class="stage-name">Transplanting</span>
+                                        <span class="stage-water">2-3 cm standing water</span>
+                                    </div>
+                                    <div class="stage">
+                                        <span class="stage-name">Tillering</span>
+                                        <span class="stage-water">Alternate wetting-drying</span>
+                                    </div>
+                                    <div class="stage">
+                                        <span class="stage-name">Panicle Initiation</span>
+                                        <span class="stage-water">5-7 cm water depth</span>
+                                    </div>
+                                    <div class="stage">
+                                        <span class="stage-name">Flowering</span>
+                                        <span class="stage-water">3-5 cm water depth</span>
+                                    </div>
+                                    <div class="stage">
+                                        <span class="stage-name">Grain Filling</span>
+                                        <span class="stage-water">Gradual drying</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="water-phase">
+                                <h4>Water Saving Techniques</h4>
+                                <ul>
+                                    <li><strong>SRI Method:</strong> 30-40% water saving</li>
+                                    <li><strong>Alternate Wetting & Drying:</strong> 15-30% saving</li>
+                                    <li><strong>Drip Irrigation:</strong> 50-60% saving</li>
+                                    <li><strong>Laser Leveling:</strong> 10-15% saving</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nutrient Management -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-vial"></i> Nutrient Management</h3>
+                        <div class="fertilizer-guide">
+                            <div class="fertilizer-plan">
+                                <h4>Recommended Fertilizer Schedule (per hectare)</h4>
+                                <table class="fertilizer-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Nutrient</th>
+                                            <th>Basal Dose</th>
+                                            <th>1st Top Dressing</th>
+                                            <th>2nd Top Dressing</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Nitrogen (N)</td>
+                                            <td>30 kg</td>
+                                            <td>40 kg (21 DAT)</td>
+                                            <td>30 kg (45 DAT)</td>
+                                            <td>100 kg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Phosphorus (P₂O₅)</td>
+                                            <td>60 kg</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>60 kg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Potassium (K₂O)</td>
+                                            <td>40 kg</td>
+                                            <td>-</td>
+                                            <td>20 kg (PI stage)</td>
+                                            <td>60 kg</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Zinc (ZnSO₄)</td>
+                                            <td>25 kg</td>
+                                            <td>-</td>
+                                            <td>-</td>
+                                            <td>25 kg</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="organic-options">
+                                <h4>Organic Alternatives</h4>
+                                <div class="organic-grid">
+                                    <div class="organic-item">
+                                        <i class="fas fa-recycle"></i>
+                                        <h5>FYM/Compost</h5>
+                                        <p>5-10 tons/ha before last plowing</p>
+                                    </div>
+                                    <div class="organic-item">
+                                        <i class="fas fa-worm"></i>
+                                        <h5>Vermicompost</h5>
+                                        <p>2-3 tons/ha at transplanting</p>
+                                    </div>
+                                    <div class="organic-item">
+                                        <i class="fas fa-leaf"></i>
+                                        <h5>Green Manure</h5>
+                                        <p>Sesbania/Dhaincha 50 kg/ha seeds</p>
+                                    </div>
+                                    <div class="organic-item">
+                                        <i class="fas fa-oil-can"></i>
+                                        <h5>Neem Cake</h5>
+                                        <p>250 kg/ha as basal dose</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Weed Management -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-leaf"></i> Weed Management</h3>
+                        <div class="weed-management">
+                            <div class="weed-method">
+                                <h4>Manual Weeding</h4>
+                                <ul>
+                                    <li>First weeding: 20-25 days after transplanting</li>
+                                    <li>Second weeding: 40-45 DAT if needed</li>
+                                    <li>Use hand hoe or cono weeder</li>
+                                </ul>
+                            </div>
+                            <div class="weed-method">
+                                <h4>Chemical Control</h4>
+                                <table class="herbicide-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Herbicide</th>
+                                            <th>Dose</th>
+                                            <th>Time of Application</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Butachlor 50% EC</td>
+                                            <td>1.25 kg a.i./ha</td>
+                                            <td>3 DAT (sand mix)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pendimethalin 30% EC</td>
+                                            <td>1.0 kg a.i./ha</td>
+                                            <td>3-4 DAT</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bispyribac 10% SC</td>
+                                            <td>25 g a.i./ha</td>
+                                            <td>15-20 DAT</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Harvesting & Post-Harvest -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-sickle"></i> Harvesting & Post-Harvest</h3>
+                        <div class="harvest-guide">
+                            <div class="harvest-stage">
+                                <h4>Harvesting Time</h4>
+                                <ul>
+                                    <li><strong>Indicators:</strong> 80-85% grains straw colored, moisture 20-25%</li>
+                                    <li><strong>Time:</strong> 30-35 days after flowering</li>
+                                    <li><strong>Method:</strong> Manual harvesting with sickle or combine harvester</li>
+                                </ul>
+                            </div>
+                            <div class="harvest-stage">
+                                <h4>Threshing & Drying</h4>
+                                <ul>
+                                    <li>Thresh within 2-3 days of harvesting</li>
+                                    <li>Dry to 14% moisture content</li>
+                                    <li>Sun drying: 2-3 days, turn every 2 hours</li>
+                                    <li>Mechanical drying: 40-45°C for 4-6 hours</li>
+                                </ul>
+                            </div>
+                            <div class="harvest-stage">
+                                <h4>Storage</h4>
+                                <ul>
+                                    <li>Clean and fumigate storage area</li>
+                                    <li>Use airtight containers/bags</li>
+                                    <li>Treat with malathion 50EC @ 10ml/ton</li>
+                                    <li>Maintain < 14% moisture, < 30°C temperature</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cost & Profit -->
+                    <div class="section-card">
+                        <h3><i class="fas fa-calculator"></i> Cost & Profit Analysis</h3>
+                        <div class="profit-calculator">
+                            <div class="cost-breakdown">
+                                <h4>Cost of Cultivation (per hectare)</h4>
+                                <table class="cost-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Component</th>
+                                            <th>Cost (₹)</th>
+                                            <th>% of Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Land Preparation</td>
+                                            <td>8,000</td>
+                                            <td>12%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Seeds & Nursery</td>
+                                            <td>3,500</td>
+                                            <td>5%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fertilizers</td>
+                                            <td>12,000</td>
+                                            <td>18%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Plant Protection</td>
+                                            <td>4,000</td>
+                                            <td>6%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Irrigation</td>
+                                            <td>6,000</td>
+                                            <td>9%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Labor (Manual)</td>
+                                            <td>25,000</td>
+                                            <td>37%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Harvesting & Threshing</td>
+                                            <td>8,000</td>
+                                            <td>12%</td>
+                                        </tr>
+                                        <tr class="total">
+                                            <td><strong>Total Cost</strong></td>
+                                            <td><strong>66,500</strong></td>
+                                            <td><strong>100%</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="profit-analysis">
+                                <h4>Profit Calculation</h4>
+                                <div class="profit-stats">
+                                    <div class="profit-stat">
+                                        <span class="stat-label">Expected Yield</span>
+                                        <span class="stat-value">5 tons/ha</span>
+                                    </div>
+                                    <div class="profit-stat">
+                                        <span class="stat-label">MSP Price</span>
+                                        <span class="stat-value">₹2,100/q</span>
+                                    </div>
+                                    <div class="profit-stat">
+                                        <span class="stat-label">Gross Income</span>
+                                        <span class="stat-value">₹1,05,000</span>
+                                    </div>
+                                    <div class="profit-stat">
+                                        <span class="stat-label">Net Profit</span>
+                                        <span class="stat-value profit">₹38,500</span>
+                                    </div>
+                                    <div class="profit-stat">
+                                        <span class="stat-label">B:C Ratio</span>
+                                        <span class="stat-value">1:1.58</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banana Guide -->
+    <section class="crop-guide" id="banana-guide">
+        <div class="container">
+            <div class="guide-header">
+                <div class="crop-icon">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <div class="crop-title">
+                    <h2>Banana Cultivation Guide</h2>
+                    <p class="crop-subtitle">Musa paradisiaca - India's leading fruit crop</p>
+                    <div class="crop-tags">
+                        <span class="tag">Tropical Crop</span>
+                        <span class="tag">12-15 months</span>
+                        <span class="tag">High Investment</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" id="banana-speak-btn">
+                    <i class="fas fa-volume-up"></i> Listen Guide
+                </button>
+            </div>
+            
+            <div class="guide-content">
+                <!-- Similar structure as rice guide -->
+                <div class="content-placeholder">
+                    <i class="fas fa-banana" style="font-size: 4rem; color: var(--secondary); margin-bottom: 1rem;"></i>
+                    <h3>Banana Cultivation Guide</h3>
+                    <p>Complete guide including varieties, planting, nutrition, pest management, harvesting, and marketing strategies for banana cultivation.</p>
+                    <p>Coming soon with detailed information...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download-guide">
+        <div class="container">
+            <div class="download-content">
+                <h2><i class="fas fa-download"></i> Download Complete Guide</h2>
+                <p>Get the complete rice cultivation guide in PDF format with images and detailed instructions</p>
+                
+                <div class="download-options">
+                    <button class="btn btn-primary btn-lg">
+                        <i class="fas fa-file-pdf"></i> Download PDF (5MB)
+                    </button>
+                    <button class="btn btn-outline btn-lg">
+                        <i class="fas fa-print"></i> Print Guide
+                    </button>
+                    <button class="btn btn-outline btn-lg" id="saveGuideBtn">
+                        <i class="fas fa-bookmark"></i> Save to Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="guide-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Personalized Advice?</h2>
+                <p>Get crop-specific recommendations based on your location, soil type, and market conditions</p>
+                <div class="cta-buttons">
+                    <a href="index.html#aiChatSection" class="btn btn-primary btn-lg">
+                        <i class="fas fa-robot"></i> Ask AI Assistant
+                    </a>
+                    <a href="support.html" class="btn btn-outline btn-lg">
+                        <i class="fas fa-user-tie"></i> Consult Expert
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <i class="fas fa-seedling"></i>
+                        <h2>KrishiMitra</h2>
+                    </div>
+                    <p>Empowering farmers with AI-driven agricultural intelligence since 2023</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="resources.html">Resources</a>
+                    <a href="support.html">Support</a>
+                    <a href="about.html">About Us</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-phone"></i> 1800-123-4567</p>
+                    <p><i class="fas fa-envelope"></i> help@krishimitra.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Krishi Bhavan, New Delhi</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Download App</h3>
+                    <div class="app-buttons">
+                        <button class="btn btn-app">
+                            <i class="fab fa-google-play"></i> Google Play
+                        </button>
+                        <button class="btn btn-app">
+                            <i class="fab fa-apple"></i> App Store
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 KrishiMitra. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/crop-guides.js"></script>
+</body>
+</html>
